@@ -1,0 +1,30 @@
+---
+import Layout   	from 'layouts/default.astro'
+import Hero 		from './_components/hero/index.astro'
+import Features 	from './_components/features/index.astro'
+import Example  	from './_components/example/index.astro'
+import Fundamentals from './_components/fundamentals/index.astro'
+import Mindset  	from './_components/mindset/index.astro'
+---
+
+<Layout>
+
+	<script>
+		import main from 'shared/main'
+		main()
+	</script>
+
+	<main class="home">
+		<Hero />
+		<Fundamentals />
+		<Features />
+		<Example />
+		<Mindset />
+    </main>
+
+	<style lang="styl" is:global>
+		.example
+			background-color #f4f5f6
+	</style>
+
+</Layout>

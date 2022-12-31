@@ -1,0 +1,30 @@
+---
+import Header from 'shared/_components/header/index.astro'
+import Footer from 'shared/_components/footer/index.astro'
+---
+<html lang="en">
+
+	<head>
+
+		<title>Jails | Home Page</title>
+
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width" />
+		<meta name="generator" content={Astro.generator} />
+
+		<link rel="icon" type="image/svg+xml" href="//jails-org.github.io/images/logo.svg" />
+		<link rel="preconnect" href="https://fonts.googleapis.com" />
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+		<link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@200;300;400;600&display=swap" rel="stylesheet" />
+
+		<style lang="styl" is:global>
+			@require '../ui-system'
+		</style>
+
+	</head>
+	<body>
+		<Header />
+        <slot />
+		<Footer />
+	</body>
+</html>

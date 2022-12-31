@@ -1,0 +1,96 @@
+---
+import Container from 'shared/_components/container/index.astro'
+---
+
+<section class="mindset">
+	<Container class="mindset__container">
+		<h3>Mindset Changes</h3>
+		<ul class="mindset__list">
+			<li>
+				<h4>No JSX, on Client Side.</h4>
+				<p>
+					JSX is very popular today, but we believe that JSX forces the need of Node everywhere.
+					<br />
+					Most applications written in Back-end Frameworks like : <em>Laravel, Wordpress, Magento, Rails, Drupal, Joomla, VTEX, and so on...</em>
+					<br />
+					<strong>There's no reason to migrate your entire Application to node environment just because the client-side framework needs to run JSX on server side.</strong>
+				</p>
+				<p>
+					JSX undermines the principle of <strong>Separation of Concerns</strong> coupling your view and rendering concerns to your Javascript Application Logic, it makes your code base bigger with a lot of imports in your component code, and it does increase your bundle and main thread tasks, affecting the performance of your web app in the page load.
+				</p>
+				<p>
+					JSX is not declarative for templating purpose.
+					The ways to branch code or to loop over collections using <strong>map()</strong> functions is too verbose and messy, forcing you to prematurely spliting your code to get some better reading benefits.
+				</p>
+			</li>
+			<li>
+				<h4>Don't be Reactive, be Event Driven</h4>
+				<p>
+					Event Driven Architecture is one of the most effective way to create decoupled systems.
+					That's the way browser and DOM works and that's a feature neglected in the Modern Frameworks today.
+				</p>
+				<p>
+					The reactive nature of modern frameworks are often focused on track changes in properties of an given object.
+					Javascript does not make deep object comparisons efficiently, so it doesn't make sense to use a weakness of the language to be the main feature of your framework.
+				</p>
+				<p>
+					That's why you see bloated components with several behaviors that could be adressed to a external event attached to that element. This is specially true when you have to add cross concerns behaviors like <strong>analytics tracking</strong>.
+				</p>
+				<p>
+					By responding to an event you have the entire control of you application flow instead of delegating it to your framework leading you to infinite loops and having to deal with the library flow, which can be cognitively challenging for most of us.
+				</p>
+			</li>
+			<li>
+				<h4>No Vendor Lock-in</h4>
+				<p>
+					Once you choose your framework of preferences you automatically lose the hability of reuse code from Javascript Ecossystem, doing integration with ux Javascript libraries is not trivial and sometimes you need to wait for some port of that library to connect to your application.
+				</p>
+				<p>
+					That is why you see a lot of redundant libraries being created to deal with some UI tasks like: <em>Charts, Sliders, Infinite Scroll, Forms, Routers</em> etc.
+					<br />We believe that Frameworks and Application libraries should encourage developers to create Javascript based solutions more than to create specific alternatives.
+				</p>
+				<p>
+					Another good example of redundant solutions are: <strong>Next / Nuxt / Svelte Kit / Angular Universal / Solid Start</strong>
+				</p>
+				<p><strong><em>This site was developed with Astro that has no relationship with Jails</em></strong>. It could also be done with webpack using <strong>webpack-html-plugin</strong> using any node template libraries like: Ejs, Pug, Nunjucks, Handlebars... Or it could be done by using any other Static Site Generators out there, like Hugo, Jekill, 11ty...</p>
+			</li>
+		</ul>
+	</Container>
+</section>
+
+<style lang="styl">
+
+	.mindset
+		padding 80px 0
+
+		h3
+			font-size 35px
+			font-weight 300
+			text-align center
+			margin-bottom 80px
+
+		&__container
+			padding 0 40px
+
+		&__list
+			list-style none
+
+			li
+				margin 20px 0
+				padding 10px 0
+
+
+			h4
+				font-weight bold
+				color green
+				font-size 20px
+
+				&:before
+					content '✓'
+					display inline-block
+					padding-right 20px
+
+			p
+				margin 15px 0
+
+</style>

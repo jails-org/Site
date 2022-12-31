@@ -1,0 +1,15 @@
+---
+const { props } = Astro
+const { src, ...options } = props
+
+---
+
+<script>
+	import { register } from 'shared/main'
+	import * as iframe from './index'
+	register('x-iframe', iframe)
+</script>
+
+<x-iframe>
+	<iframe data-src={src} {...options}></iframe>
+</x-iframe>

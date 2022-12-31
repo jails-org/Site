@@ -1,0 +1,52 @@
+---
+import Container from 'shared/_components/container/index.astro'
+---
+
+<section class="features">
+	<Container class="features__container">
+		<ul class="features__list">
+			<li>
+				<span class="features__icon">ƛ</span>
+				<h3>Functional Oriented</h3>
+				<p>Functional oriented, but in the Javascript way. Use the best of the modern Javascript language functional features. </p>
+			</li>
+			<li>
+				<span class="features__icon">🏝</span>
+				<h3>Based on Island Architecture</h3>
+				<p>Based on Island Architecture. Build your components logic for a specific part of your app. Less code, less bundle.</p>
+			</li>
+			<li>
+				<span class="features__icon">♻️</span>
+				<h3>Javascript Ecossystem Compatible</h3>
+				<p>Integrate your Application with any other Javascript Ecossystem libraries, like <em> Swiper, ChartJs</em>, and many others easily.</p>
+			</li>
+		</ul>
+	</Container>
+</section>
+
+<style lang="styl">
+
+	.features
+		padding 20px 0 80px
+
+		&__list
+			list-style none
+			+above('tablet')
+				display grid
+				grid-template-columns 1fr 1fr 1fr
+				gap 50px
+
+			li
+				text-align center
+				+below('tablet')
+					margin 20px 0 60px
+
+		&__icon
+			font-size 60px
+
+		h3
+			font-size 20px
+			font-weight bold
+			margin-bottom 10px
+
+</style>
