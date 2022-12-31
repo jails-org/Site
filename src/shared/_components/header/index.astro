@@ -52,10 +52,16 @@ import Container from 'shared/_components/container/index.astro'
 
 		&__menu
 			display flex
-			margin-left auto
 			text-transform uppercase
+			+below('desktop')
+				justify-content space-around
+				width 100%
+			+above('desktop')
+				margin-left auto
+
 			a
-				margin-left 20px
 				color $color-black
+				+above('desktop')
+					margin-left 30px
 
 </style>
