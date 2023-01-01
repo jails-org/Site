@@ -14,7 +14,7 @@ export default function iframe ({ main, elm }) {
 	}
 
 	const check = () => {
-		if(isVisible(elm, -250)) {
+		if(isVisible(elm, -100)) {
 			iframe.src = iframe.dataset.src
 			window.removeEventListener('scroll', onscroll)
 		}
