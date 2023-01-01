@@ -8,12 +8,7 @@ export const throttle = (fn, wait) => {
 	}
 }
 
-export const isInViewport = (elem) => {
+export const isVisible = (elem, offsetTop = 0) => {
 	const bounding = elem.getBoundingClientRect()
-	return (
-		bounding.top >= 0 &&
-		bounding.left >= 0 &&
-		bounding.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
-		bounding.right <= (window.innerWidth || document.documentElement.clientWidth)
-	)
+	return bounding.top <= (window.scrollY - offsetTop)
 }

@@ -1,4 +1,4 @@
-import { isInViewport, throttle } from 'shared/_utils'
+import { isVisible, throttle } from 'shared/_utils'
 
 export default function iframe ({ main, elm }) {
 
@@ -14,7 +14,7 @@ export default function iframe ({ main, elm }) {
 	}
 
 	const check = () => {
-		if(isInViewport(elm)) {
+		if(isVisible(elm, -250)) {
 			iframe.src = iframe.dataset.src
 			window.removeEventListener('scroll', onscroll)
 		}
