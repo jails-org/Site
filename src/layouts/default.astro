@@ -21,6 +21,20 @@ import Footer from 'shared/_components/footer/index.astro'
 			@require '../ui-system'
 		</style>
 
+		<script>
+			import main from 'shared/main'
+			main()
+		</script>
+
+		<!-- Google tag (gtag.js) -->
+		<script is:inline async src="https://www.googletagmanager.com/gtag/js?id=G-621623ZSE9"></script>
+		<script is:inline>
+			window.dataLayer = window.dataLayer || []
+			function gtag(){dataLayer.push(arguments)}
+			gtag('js', new Date())
+			gtag('config', 'G-621623ZSE9')
+		</script>
+
 	</head>
 	<body>
 		<Header />

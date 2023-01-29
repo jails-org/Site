@@ -8,7 +8,7 @@ import Container from 'shared/_components/container/index.astro'
 	register('x-header', header, dependencies)
 </script>
 
-<x-header class="header {fixed?'fixed':''}">
+<x-header class="header" html-class="{fixed?'fixed':''}">
 	<Container class="header__container">
 		<img class="header__logo" src="//jails-org.github.io/images/logo.svg" alt="Jails Logo" />
 		<nav class="header__menu">

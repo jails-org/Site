@@ -2942,10 +2942,10 @@ istanbul-reports@^3.1.3:
     html-escaper "^2.0.0"
     istanbul-lib-report "^3.0.0"
 
-jails-js@^5.0.5:
-  version "5.0.5"
-  resolved "https://registry.yarnpkg.com/jails-js/-/jails-js-5.0.5.tgz#e9c995e0dd7b48c41b92f6acb8e6811020ca930e"
-  integrity sha512-0PptfGzU/f2weMsIUB4HhoUiK6JAuzlz2RF4lR8aTm/m3PDTeW5Tcu1ajQt2VcHbpjrVIW4u/MWIIQI5WzBybg==
+jails-js@^5.0.6:
+  version "5.0.6"
+  resolved "https://registry.yarnpkg.com/jails-js/-/jails-js-5.0.6.tgz#7931e389b4c9e2d1bfb8d32c9f63e641f8260ad0"
+  integrity sha512-mTty+4TvxgcPLwAGhcHgl9vh9u/J6VdbMyv/NXyiBWgAYpMPfJ+Chy6xkegdG+rHaRXSzutcYJke/ThEeLm37Q==
   dependencies:
     morphdom "^2.6.1"
     squirrelly "^8.0.8"
