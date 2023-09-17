@@ -7,52 +7,49 @@ import Container from 'shared/_components/container/index.astro'
 		<h3>Mindset Changes</h3>
 		<ul class="mindset__list">
 			<li>
-				<h4>No JSX, on Client Side.</h4>
+				<h4>Reimagining the Role of JSX: Unleashing Front-end Flexibility</h4>
 				<p>
-					JSX is very popular today, but we believe that JSX forces the need of Node everywhere.
-					<br />
-					Most applications written in Back-end Frameworks like : <em>Laravel, Wordpress, Magento, Rails, Drupal, Joomla, VTEX, and so on...</em>
-					<br />
-					<strong>There's no reason to migrate your entire Application to node environment just because the client-side framework needs to run JSX on server side.</strong>
+					Undeniably, JSX has gained immense popularity in today's development landscape. However, we firmly believe that JSX should not impose a dependency on Node across the board. We understand that many applications are built using robust back-end frameworks like Laravel, Wordpress, Magento, Rails, Drupal, Joomla, VTEX, and the list goes on.
+					Forcing a migration to a Node environment solely for the purpose of running JSX on the server side seems unnecessary.
 				</p>
 				<p>
-					JSX undermines the principle of <strong>Separation of Concerns</strong> coupling your view and rendering concerns to your Javascript Application Logic, it makes your code base bigger with a lot of imports in your component code, and it does increase your bundle and main thread tasks, affecting the performance of your web app in the page load.
+					Moreover, JSX can sometimes blur the lines of Separation of Concerns, intertwining your view and rendering logic with your JavaScript application.
+					This can lead to a larger codebase with excessive imports in your component code, ultimately impacting your bundle size and main thread tasks. These performance implications can negatively affect your web application's overall loading speed.
+				</p>
+
+			</li>
+			<li>
+				<h4>Discover the Power of Event-Driven Architecture</h4>
+				<p>
+					Event-driven architecture is a remarkable way to develop systems that are loosely coupled. It's like the magic behind how browsers and the DOM work, yet it's a feature often overlooked in modern frameworks.
 				</p>
 				<p>
-					JSX is not declarative for templating purpose.
-					The ways to branch code or to loop over collections using <strong>map()</strong> functions is too verbose and messy, forcing you to prematurely spliting your code to get some better reading benefits.
+					Modern frameworks tend to lean towards a reactive nature, focusing on tracking changes in object properties. However, JavaScript doesn't efficiently handle deep object comparisons, so relying on this weakness as the main feature of a framework doesn't make much sense.
+				</p>
+				<p>
+					As a result, we often see bloated components with multiple behaviors that could be better addressed through external events attached to those elements. This is particularly true when it comes to incorporating cross-concern behaviors.
+				</p>
+				<p>
+					By responding to events, you gain complete control over the flow of your application, rather than delegating it entirely to your framework. This helps you avoid infinite loops and the cognitive challenges that can come with managing complex library flows.
 				</p>
 			</li>
 			<li>
-				<h4>Don't be Reactive, be Event Driven</h4>
+				<h4>Eliminating Vendor Lock-in for Greater Flexibility</h4>
 				<p>
-					Event Driven Architecture is one of the most effective way to create decoupled systems.
-					That's the way browser and DOM works and that's a feature neglected in the Modern Frameworks today.
+					Choosing a preferred framework often comes with the downside of losing the ability to leverage the vast JavaScript ecosystem. Integrating with popular JavaScript libraries can be challenging and sometimes requires waiting for library ports to connect to your application.
 				</p>
 				<p>
-					The reactive nature of modern frameworks are often focused on track changes in properties of an given object.
-					Javascript does not make deep object comparisons efficiently, so it doesn't make sense to use a weakness of the language to be the main feature of your framework.
+					This is why we see a multitude of redundant libraries being created to handle common UI tasks such as charts, sliders, infinite scrolling, forms, routers, and more. At our core, we believe that frameworks and application libraries should empower developers to build JavaScript-based solutions rather than creating specific alternatives.
 				</p>
 				<p>
-					That's why you see bloated components with several behaviors that could be adressed to a external event attached to that element. This is specially true when you have to add cross concerns behaviors like <strong>analytics tracking</strong>.
+					Let's take a look at some examples of redundant solutions: Next, Nuxt, Svelte Kit, Angular Universal, and Solid Start. These options, while valuable in their own right, can sometimes lead to unnecessary duplication of effort.
 				</p>
 				<p>
-					By responding to an event you have the entire control of you application flow instead of delegating it to your framework leading you to infinite loops and having to deal with the library flow, which can be cognitively challenging for most of us.
-				</p>
-			</li>
-			<li>
-				<h4>No Vendor Lock-in</h4>
-				<p>
-					Once you choose your framework of preferences you automatically lose the hability of reuse code from Javascript Ecossystem, doing integration with ux Javascript libraries is not trivial and sometimes you need to wait for some port of that library to connect to your application.
+					For instance, this very site was developed using Astro, a framework that has no relationship with Jails. Alternatively, webpack could have been utilized with webpack-html-plugin, leveraging various node template libraries like Ejs, Pug, Nunjucks, Handlebars, or even other static site generators available.
 				</p>
 				<p>
-					That is why you see a lot of redundant libraries being created to deal with some UI tasks like: <em>Charts, Sliders, Infinite Scroll, Forms, Routers</em> etc.
-					<br />We believe that Frameworks and Application libraries should encourage developers to create Javascript based solutions more than to create specific alternatives.
+					By embracing a flexible approach, we can break free from vendor lock-in and unlock the full potential of the JavaScript ecosystem.
 				</p>
-				<p>
-					Another good example of redundant solutions are: <strong>Next / Nuxt / Svelte Kit / Angular Universal / Solid Start</strong>
-				</p>
-				<p><strong><em>This site was developed with Astro that has no relationship with Jails</em></strong>. It could also be done with webpack using <strong>webpack-html-plugin</strong> using any node template libraries like: Ejs, Pug, Nunjucks, Handlebars... Or it could be done by using any other Static Site Generators out there, like Hugo, Jekill, 11ty...</p>
 			</li>
 		</ul>
 	</Container>
@@ -82,13 +79,8 @@ import Container from 'shared/_components/container/index.astro'
 
 			h4
 				font-weight bold
-				color green
 				font-size 25px
-
-				&:before
-					content '✓'
-					display inline-block
-					padding-right 20px
+				text-align center
 
 			p
 				margin 15px 0
