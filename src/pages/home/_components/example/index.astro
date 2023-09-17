@@ -7,6 +7,10 @@ import Iframe from 'shared/_components/iframe/index.astro'
 <section class="example" id="example">
 	<Container>
 		<h2 class="example__title" data-title>Todo MVC Example</h2>
+		<h3>This example is an implementation of <a href="http://todomvc.com" target="_blank">todomvc.com</a></h3>
+		<p><strong>Jails</strong>: <strong style="color:green">~153</strong> lines of code</p>
+		<p><strong>Vanilla Javascript</strong>: <strong style="color:red">~937</strong> lines of code</p>
+		<br />
 		<Iframe src="https://stackblitz.com/edit/jails-todomvc?embed=1&file=index.html,todo-app.ts"  />
 	</Container>
 </section>
@@ -18,8 +22,11 @@ import Iframe from 'shared/_components/iframe/index.astro'
 		padding 80px 0
 
 		&__title
-			margin-bottom 40px
 			font-size 35px
+
+		h3
+			margin-bottom 10px
+			font-size 20px
 
 		iframe
 			border none
