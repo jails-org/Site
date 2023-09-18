@@ -21,14 +21,12 @@ import Container from 'shared/_components/container/index.astro'
 </x-header>
 
 <style lang="styl">
-
 	.header
 		position fixed
 		top 0
 		left 0
 		width 100%
-		background $color-white
-		box-shadow rgba(149, 157, 165, 0.2) 0px 8px 24px
+		background-color #0F2027
 
 		&.fixed
 			.header__logo
@@ -67,7 +65,7 @@ import Container from 'shared/_components/container/index.astro'
 				margin-left auto
 
 			a
-				color $color-black
+				color $color-white
 				+above('desktop')
 					margin-left 30px
 				+below('mobile')
