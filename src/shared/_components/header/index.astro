@@ -26,7 +26,7 @@ import Container from 'shared/_components/container/index.astro'
 		top 0
 		left 0
 		width 100%
-		background-color #0F2027
+		transition background .3s
 
 		&.fixed
 			.header__logo
@@ -35,6 +35,11 @@ import Container from 'shared/_components/container/index.astro'
 
 			.header__menu
 				padding-left 30px
+
+			background-color $color-white
+			box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+			a
+				color $color-black
 
 		&__container
 			position relative
