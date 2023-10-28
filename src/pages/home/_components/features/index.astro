@@ -3,6 +3,7 @@ import Container from 'shared/_components/container/index.astro'
 ---
 
 <section class="features">
+
 	<Container class="features__container">
 		<ul class="features__list">
 			<li>
@@ -13,12 +14,12 @@ import Container from 'shared/_components/container/index.astro'
 			<li>
 				<span class="features__icon">🏝</span>
 				<h3>Based on Island Architecture</h3>
-				<p>Based on Island Architecture. Build your components logic for a specific part of your app. Less code, less bundle.</p>
+				<p>Build your components logic for a specific part of your app. Less code, less bundle.</p>
 			</li>
 			<li>
 				<span class="features__icon">♻️</span>
 				<h3>Javascript Ecossystem Compatible</h3>
-				<p>Integrate your Application with any other Javascript Ecossystem libraries, like <em> Swiper, ChartJs</em>, and many others easily.</p>
+				<p>Integrate your Application with any other Javascript Ecossystem libraries easily.</p>
 			</li>
 		</ul>
 	</Container>
@@ -27,26 +28,38 @@ import Container from 'shared/_components/container/index.astro'
 <style lang="styl">
 
 	.features
-		padding 20px 0 80px
+
+		&__container
+			padding 80px 20px 80px
+
 
 		&__list
 			list-style none
 			+above('tablet')
 				display grid
 				grid-template-columns 1fr 1fr 1fr
-				gap 50px
+				gap 30px
 
 			li
-				text-align center
+				font-weight 300
+				border 1px solid rgb(51, 65, 85)
+				border-radius 10px
+				padding 30px
+
 				+below('tablet')
 					margin 20px 0 60px
 
 		&__icon
 			font-size 60px
+			text-align center
+			display block
+			color $color-white
 
 		h3
 			font-size 20px
-			font-weight bold
+			font-weight 400
 			margin-bottom 10px
+			text-align center
+
 
 </style>

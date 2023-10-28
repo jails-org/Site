@@ -1,16 +1,15 @@
 ---
 import Container from 'shared/_components/container/index.astro'
-import Button from 'shared/_components/button/index.astro'
 ---
 
 <section class="hero">
 	<Container class="hero__container">
 		<div class="hero__call">
 			<h2 class="hero__title">
-				<img class="hero__logo" src="//jails-org.github.io/images/logo.svg" alt="Jails Logo" />
+				<img src="//jails-org.github.io/images/logo.svg" alt="Jails Logo" />
 			</h2>
 			<h3 class="hero__subtitle">
-				Elegant and Minimalistic <br />
+				An Elegant and Minimalistic <br />
 				Javascript Application Library
 			</h3>
 		</div>
@@ -29,6 +28,9 @@ import Button from 'shared/_components/button/index.astro'
 		min-height 100vh
 		align-items center
 
+		.mascot
+			width 200px
+
 		&__call
 			text-align center
 
@@ -38,10 +40,11 @@ import Button from 'shared/_components/button/index.astro'
 			img
 				width 100%
 
-
 		&__subtitle
-			font-size 45px
-			margin 10px 0 30px
+			font-size 50px
+			margin 0 0 20px
+			+below('mobile')
+				font-size 35px
 
 		&__quote
 			text-align center
@@ -51,5 +54,9 @@ import Button from 'shared/_components/button/index.astro'
 				font-weight 300
 			cite
 				color #868e96
+		hr
+			border-bottom 1px solid yellow
+			display block
+			width 100%
 
 </style>

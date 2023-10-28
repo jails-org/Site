@@ -3,21 +3,29 @@ import Container from 'shared/_components/container/index.astro'
 ---
 
 <footer class="footer">
+	<hr />
 	<Container class="footer__container">
 		<img src="//jails-org.github.io/images/logo.svg" alt="Jails Logo" />
-		<p>Released under the <strong>MIT License</strong></p>
 		<p>This site was Built with <strong>Astro + Jails</strong></p>
-		<p>Copyright © 2014- 2023 <em>Eduardo Ottaviani</em></p>
+		<p>Released under the <strong>MIT License</strong></p>
 	</Container>
+
 </footer>
 
 <style lang="styl">
 
 	.footer
-		background-color #0F2027
-		padding 50px 0
+		margin-top 50px
+		padding 50px 0 30px
 		color $color-white
 		text-align center
+
+		hr
+			border none
+			border-top 1px solid rgb(51, 65, 85)
+			max-width 80%
+			margin 50px auto
+
 
 		p
 			margin 5px 0
