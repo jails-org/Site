@@ -10,7 +10,9 @@ import Container from 'shared/_components/container/index.astro'
 
 <x-header class="header" html-class="fixed?'fixed':''">
 	<Container class="header__container">
-		<img class="header__logo" src="//jails-org.github.io/images/logo.svg" alt="Jails Logo" />
+		<h1 class="header__logo">
+			<span class="header__logo-text">Jails.js</span>
+		</h1>
 		<nav class="header__menu">
 			<a href="https://jails-org.github.io/" target="_blank">Documentation</a>
 			<a href="https://stackblitz.com/@Javiani/collections/jails-organization" target="_blank">Examples</a>
@@ -26,37 +28,20 @@ import Container from 'shared/_components/container/index.astro'
 		top 0
 		left 0
 		width 100%
-		transition background .3s
-
-		&.fixed
-			.header__logo
-				opacity 1
-				transform: rotate(0)
-
-			.header__menu
-				padding-left 30px
-
-			background-color $color-white
-			box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
-			a
-				color $color-black
+		background-color #0f172a
 
 		&__container
 			position relative
-			padding-top 18px
-			padding-bottom 18px
 			display flex
 			align-items center
 
 		&__logo
-			width 44px
-			height 44px
-			position absolute
-			left 5px
-			top 5px
-			opacity 0
-			transform rotate(45deg)
-			transition opacity .3s, transform .5s
+			width 64px
+			height 64px
+			display flex
+			&-text
+				color $color-white
+				padding 5px 20px
 
 		&__menu
 			display flex

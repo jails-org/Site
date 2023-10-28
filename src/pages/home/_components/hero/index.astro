@@ -8,13 +8,11 @@ import Button from 'shared/_components/button/index.astro'
 		<div class="hero__call">
 			<h2 class="hero__title">
 				<img class="hero__logo" src="//jails-org.github.io/images/logo.svg" alt="Jails Logo" />
-				<span class="hero__title-text">Jails</span>
 			</h2>
 			<h3 class="hero__subtitle">
-				Elegant and Minimalistic
+				Elegant and Minimalistic <br />
 				Javascript Application Library
 			</h3>
-			<Button href="https://jails-org.github.io" target="_blank">Getting Started</Button>
 		</div>
 		<blockquote class="hero__quote">
 			<p>“Simplicity is the ultimate sophistication”</p>
@@ -26,55 +24,29 @@ import Button from 'shared/_components/button/index.astro'
 <style lang="styl">
 
 	.hero
-		padding 100px 0 60px
+		display flex
 		color $color-white
-		background: #000428;  /* fallback for old browsers */
-		background: -webkit-linear-gradient(to left, #004e92, #000428);  /* Chrome 10-25, Safari 5.1-6 */
-		background: linear-gradient(to left, #004e92, #000428); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-
-		&__container
-			+above('tablet')
-				display flex
-				align-items center
-				justify-content space-between
+		min-height 100vh
+		align-items center
 
 		&__call
-			flex .4
-			+below('tablet')
-				text-align center
-
-		&__quote
-			flex .3
-			text-align right
-			+below('mobile')
-				display none
-
-		&__logo
-			width 110px
-			height 110px
 			text-align center
 
 		&__title
-			font-size 65px
-			font-weight 300
-
-			+above('tablet')
-				display flex
-				align-items baseline
-
+			width 150px
+			margin 30px auto
 			img
-				+below('mobile')
-					display block
-					margin 0 auto 10px
+				width 100%
 
 
 		&__subtitle
-			font-size 30px
+			font-size 45px
 			margin 10px 0 30px
 
 		&__quote
+			text-align center
 			p
-				font-size 30px
+				font-size 20px
 				font-style italic
 				font-weight 300
 			cite
