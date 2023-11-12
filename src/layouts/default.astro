@@ -1,5 +1,5 @@
 ---
-import { GoogleFontsOptimizer } from 'astro-google-fonts-optimizer'
+import Fonts from 'shared/_components/fonts/index.astro'
 import Header from 'shared/_components/header/index.astro'
 import Footer from 'shared/_components/footer/index.astro'
 ---
@@ -16,7 +16,8 @@ import Footer from 'shared/_components/footer/index.astro'
 		<link rel="icon" type="image/svg+xml" href="//jails-org.github.io/images/logo.svg" />
 		<link rel="preconnect" href="https://fonts.googleapis.com" />
 		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-		<link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@200;300;400;600&display=swap" rel="stylesheet" />
+
+		<Fonts />
 
 		<style lang="styl" is:global>
 			@require '../ui-system'
