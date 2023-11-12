@@ -1,12 +1,13 @@
 ---
 import Container from 'shared/_components/container/index.astro'
+import Logo from 'shared/_components/logo/index.astro'
 ---
 
 <section class="hero">
 	<Container class="hero__container">
 		<div class="hero__call">
 			<h2 class="hero__title">
-				<img src="//jails-org.github.io/images/logo.svg" alt="Jails Logo" />
+				<Logo style={`width:100%; `} />
 			</h2>
 			<h3 class="hero__subtitle">
 				An Elegant and Minimalistic <br />
@@ -28,17 +29,15 @@ import Container from 'shared/_components/container/index.astro'
 		min-height 100vh
 		align-items center
 
-		.mascot
-			width 200px
-
 		&__call
 			text-align center
 
 		&__title
 			width 150px
 			margin 30px auto
-			img
-				width 100%
+
+		.logo
+			border 10px solid magenta
 
 		&__subtitle
 			font-size 50px

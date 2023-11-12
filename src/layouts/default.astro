@@ -1,4 +1,5 @@
 ---
+import { GoogleFontsOptimizer } from 'astro-google-fonts-optimizer'
 import Header from 'shared/_components/header/index.astro'
 import Footer from 'shared/_components/footer/index.astro'
 ---
@@ -11,11 +12,9 @@ import Footer from 'shared/_components/footer/index.astro'
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width" />
 		<meta name="description" content="Jails is a component library to add javascript behavior to Web Apps as close as possible to vanilla" />
-
 		<link rel="icon" type="image/svg+xml" href="//jails-org.github.io/images/logo.svg" />
-		<link rel="preconnect" href="https://fonts.googleapis.com" />
-		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-		<link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@200;300;400;600&display=swap" rel="stylesheet" />
+
+		<GoogleFontsOptimizer url="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@200;300;400;600&display=swap"></GoogleFontsOptimizer>
 
 		<style lang="styl" is:global>
 			@require '../ui-system'
@@ -27,20 +26,17 @@ import Footer from 'shared/_components/footer/index.astro'
 			import main from 'shared/main'
 			main()
 		</script>
-
-		<!-- Google tag (gtag.js) -->
-		<script is:inline async src="https://www.googletagmanager.com/gtag/js?id=G-621623ZSE9"></script>
-		<script is:inline>
-			window.dataLayer = window.dataLayer || []
-			function gtag(){dataLayer.push(arguments)}
-			gtag('js', new Date())
-			gtag('config', 'G-621623ZSE9')
-		</script>
-
 	</head>
 	<body>
 		<Header />
         <slot />
 		<Footer />
+		<!-- Google tag (gtag.js) -->
+		<script is:inline data-name="analytics" type="text/html" src="https://www.googletagmanager.com/gtag/js?id=G-621623ZSE9">
+			window.dataLayer = window.dataLayer || []
+			function gtag(){dataLayer.push(arguments)}
+			gtag('js', new Date())
+			gtag('config', 'G-621623ZSE9')
+		</script>
 	</body>
 </html>
