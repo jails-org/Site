@@ -1,6 +1,5 @@
 ---
 import Fonts from 'shared/_components/fonts/index.astro'
-import Header from 'shared/_components/header/index.astro'
 import Footer from 'shared/_components/footer/index.astro'
 ---
 <html lang="en">
@@ -21,8 +20,6 @@ import Footer from 'shared/_components/footer/index.astro'
 
 		<style lang="styl" is:global>
 			@require '../ui-system'
-			body
-				background-color #0f172a
 		</style>
 
 		<script>
@@ -31,7 +28,7 @@ import Footer from 'shared/_components/footer/index.astro'
 		</script>
 	</head>
 	<body>
-		<Header />
+
         <slot />
 		<Footer />
 		<!-- Google tag (gtag.js) -->

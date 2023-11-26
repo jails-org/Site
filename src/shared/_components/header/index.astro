@@ -12,8 +12,7 @@ import Logo from 'shared/_components/logo/index.astro'
 <x-header class="header" html-class="fixed?'fixed':''">
 	<Container class="header__container">
 		<h1 class="header__logo">
-			<Logo style="width: 48px; margin-right: 10px" />
-			<span class="header__logo-text">Jails.js</span>
+			<Logo style="width: 52px; margin-right: 10px" />
 		</h1>
 		<nav class="header__menu">
 			<a href="https://jails-org.github.io/" target="_blank">Documentation</a>
@@ -26,45 +25,23 @@ import Logo from 'shared/_components/logo/index.astro'
 
 <style lang="styl">
 	.header
-		position fixed
-		top 0
-		left 0
-		width 100%
-		background-color #0f172a
+		display block
+		padding 5px 0
 
 
 		&__container
-			position relative
 			display flex
 			align-items center
-			padding 0px 20px
-			+below('mobile')
-				display block
-
-		&__logo
-			display flex
-			margin-bottom 10px
-			padding 10px 0
-
-			&-text
-				color $color-white
 
 		&__menu
 			display flex
 			justify-content space-between
 			text-transform uppercase
-			padding-bottom 20px
 			margin-left auto
 
 			a
-				color $color-white
 				text-decoration none
-				margin 0
-
-				+below('mobile')
-					font-size 14px
-
-				+above('tablet')
-					margin 0 20px
+				margin-left 50px
+				color $color-white
 
 </style>
