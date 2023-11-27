@@ -1,6 +1,5 @@
 ---
 import Container from 'shared/_components/container/index.astro'
-import Logo from 'shared/_components/logo/index.astro'
 ---
 
 <script>
@@ -11,9 +10,7 @@ import Logo from 'shared/_components/logo/index.astro'
 
 <x-header class="header" html-class="fixed?'fixed':''">
 	<Container class="header__container">
-		<h1 class="header__logo">
-			<Logo style="width: 52px; margin-right: 10px" />
-		</h1>
+
 		<nav class="header__menu">
 			<a href="https://jails-org.github.io/" target="_blank">Documentation</a>
 			<a href="https://stackblitz.com/@Javiani/collections/jails-organization" target="_blank">Playground</a>
@@ -26,7 +23,7 @@ import Logo from 'shared/_components/logo/index.astro'
 <style lang="styl">
 	.header
 		display block
-		padding 5px 0
+		padding 15px 0
 
 		&__container
 			align-items center
