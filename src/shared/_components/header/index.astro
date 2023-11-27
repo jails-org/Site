@@ -16,7 +16,7 @@ import Logo from 'shared/_components/logo/index.astro'
 		</h1>
 		<nav class="header__menu">
 			<a href="https://jails-org.github.io/" target="_blank">Documentation</a>
-			<a href="https://stackblitz.com/@Javiani/collections/jails-organization" target="_blank">Examples</a>
+			<a href="https://stackblitz.com/@Javiani/collections/jails-organization" target="_blank">Playground</a>
 			<a href="https://github.com/jails-org/Jails" target="_blank">Github</a>
 			<a href="https://github.com/jails-org/Jails/discussions" target="_blank">Discussions</a>
 		</nav>
@@ -28,20 +28,30 @@ import Logo from 'shared/_components/logo/index.astro'
 		display block
 		padding 5px 0
 
-
 		&__container
-			display flex
 			align-items center
+			+above('tablet')
+				display flex
+
+		&__logo
+			margin-bottom 10px
 
 		&__menu
 			display flex
 			justify-content space-between
 			text-transform uppercase
 			margin-left auto
+			flex-wrap wrap
+
+			+below('tablet')
+				gap 5px
+			+above('tablet')
+				gap 30px
 
 			a
 				text-decoration none
-				margin-left 50px
+
 				color $color-white
+				font-size 14px
 
 </style>

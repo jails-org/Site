@@ -23,7 +23,7 @@ import Header from 'shared/_components/header/index.astro'
 				<img src="https://img.shields.io/badge/License-MIT-yellow.svg" alt="MIT License" />
 			</div>
 			<blockquote>
-				<p>“Simplicity is the ultimate sophistication”</p>
+				<p class="font-styled">“Simplicity is the ultimate sophistication”</p>
 				<cite title="Source Title">— Leonardo Da Vinci</cite>
 			</blockquote>
 
@@ -41,33 +41,46 @@ import Header from 'shared/_components/header/index.astro'
 		box-shadow rgba(0, 0, 0, 0.35) 0px 5px 15px
 
 		&__container
-			padding 60px 0
-			display flex
-			align-items center
-			justify-content space-between
+			padding 100px 0
 			*
 				color $color-white
+
+			+above('tablet')
+				display flex
+				align-items center
+				justify-content space-between
+
 
 		&__version
 			text-align center
 			font-family Arial
 			p
 				font-size 11px
-				margin-bottom 5px
 
 		&__mascot
 			display block
 			margin 0 auto
 
 		&__title
-			width 150px
 			font-size 70px
+			+below('mobile')
+				text-align center
+
 
 		&__subtitle
-			font-size 25px
+			font-size 28px
+			margin-bottom 10px
+			+below('mobile')
+				margin 0 auto
+				text-align center
 
 		blockquote
-			text-align right
+
+			+below('tablet')
+				text-align center
+			+above('tablet')
+				text-align right
+
 			p
 				font-size 25px
 				font-weight 300
