@@ -4,11 +4,18 @@ import Logo from 'shared/_components/logo/index.astro'
 ---
 
 <footer class="footer">
+	<div class="hero__quote">
+		<div class="hero__version">
+			<img src="/images/athena.png" class="hero__mascot" alt="Athena Mascot" width="100" />
+			<p>Release Name: <strong>Athena</strong></p>
+			<img src="https://badge.fury.io/js/jails-js.svg?v5.5.2" alt="NPM Jails Version" />
+			<img src="https://img.shields.io/badge/License-MIT-yellow.svg" alt="MIT License" />
+		</div>
+	</div>
 	<hr />
 	<Container class="footer__container">
 		<Logo style={`width:64px`} />
 		<p>This site was Built with <strong>Astro + Jails</strong></p>
-		<p>Released under the <strong>MIT License</strong></p>
 	</Container>
 
 </footer>
