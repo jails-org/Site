@@ -2607,6 +2607,11 @@ human-signals@^4.3.0:
   resolved "https://registry.yarnpkg.com/human-signals/-/human-signals-4.3.1.tgz#ab7f811e851fca97ffbd2c1fe9a958964de321b2"
   integrity sha512-nZXjEF2nbo7lIw3mgYjItAfgQXog3OjJogSbKa2CQIIvSGWcKgeJnQlNXip6NglNzYH45nSRiEVimMvYL8DDqQ==
 
+idiomorph@^0.3.0:
+  version "0.3.0"
+  resolved "https://registry.yarnpkg.com/idiomorph/-/idiomorph-0.3.0.tgz#f6675bc5bef1a72c94021e43141a3f605d2d6288"
+  integrity sha512-UhV1Ey5xCxIwR9B+OgIjQa+1Jx99XQ1vQHUsKBU1RpQzCx1u+b+N6SOXgf5mEJDqemUI/ffccu6+71l2mJUsRA==
+
 ieee754@^1.1.13, ieee754@^1.2.1:
   version "1.2.1"
   resolved "https://registry.yarnpkg.com/ieee754/-/ieee754-1.2.1.tgz#8eb7a10a63fff25d15a57b001586d177d1b0d352"
@@ -2805,12 +2810,12 @@ istanbul-reports@^3.1.3:
     html-escaper "^2.0.0"
     istanbul-lib-report "^3.0.0"
 
-jails-js@^5.5.5:
-  version "5.5.5"
-  resolved "https://registry.yarnpkg.com/jails-js/-/jails-js-5.5.5.tgz#9c52c2e8e725cbcd292e2c42c85897651f2e2c63"
-  integrity sha512-9wunVsvQTU6DaKrmtjv2K4x4K/eCKOSAYqWU9YtnkqVPo7U5PYlVZz5aIBiKsNqIZtO1dYAdeyIjONMw3qVodw==
+jails-js@^5.8.0:
+  version "5.8.0"
+  resolved "https://registry.yarnpkg.com/jails-js/-/jails-js-5.8.0.tgz#8ead9826be4b5ba1498d93d5c3c6370421823ea9"
+  integrity sha512-swwFeFXTSjsIGYBuMgZpKtFoWtEX00+o/7UcF18KVHekEcSBuOUVsJM/XZPY3jo7i0rbG29xOX2adhplJvNS5g==
   dependencies:
-    morphdom "^2.7.0"
+    idiomorph "^0.3.0"
 
 jest-changed-files@^29.5.0:
   version "29.5.0"
@@ -3821,11 +3826,6 @@ mkdirp-classic@^0.5.2, mkdirp-classic@^0.5.3:
   version "0.5.3"
   resolved "https://registry.yarnpkg.com/mkdirp-classic/-/mkdirp-classic-0.5.3.tgz#fa10c9115cc6d8865be221ba47ee9bed78601113"
   integrity sha512-gKLcREMhtuZRwRAfqP3RFW+TK4JqApVBtOIftVgjuABpAtpxhPGaDcfvbhNvD0B8iD1oUr/txX35NjcaY6Ns/A==
-
-morphdom@^2.7.0:
-  version "2.7.0"
-  resolved "https://registry.yarnpkg.com/morphdom/-/morphdom-2.7.0.tgz#9ef0c4bc15ac8725df398d127c6984f62e7f89e8"
-  integrity sha512-8L8DwbdjjWwM/aNqj7BSoSn4G7SQLNiDcxCnMWbf506jojR6lNQ5YOmQqXEIE8u3C492UlkN4d0hQwz97+M1oQ==
 
 mri@^1.1.0:
   version "1.2.0"
