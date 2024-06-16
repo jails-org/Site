@@ -1,15 +1,11 @@
 ---
 import Container from 'shared/_components/container/index.astro'
+import Logo from 'shared/_components/logo/index.astro'
 ---
 
-<script>
-	import { register, dependencies } from 'shared/main'
-	import * as header from './index'
-	register('x-header', header, dependencies)
-</script>
-
-<x-header class="header" html-class="fixed?'fixed':''">
+<x-header class="header">
 	<Container class="header__container">
+		<Logo style="width:46px; height 42px" />
 		<nav class="header__menu">
 			<a href="https://jails-org.github.io/" target="_blank">Documentation</a>
 			<a href="https://stackblitz.com/@Javiani/collections/jails-organization" target="_blank">Playground</a>
@@ -22,8 +18,13 @@ import Container from 'shared/_components/container/index.astro'
 
 <style lang="styl">
 	.header
+		position fixed
 		display block
-		padding 15px 0
+		padding 8px 0
+		top 0
+		width 100%
+		background-color #fff
+		box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
 
 		&__container
 			align-items center
