@@ -3,7 +3,7 @@ import Container from 'shared/_components/container/index.astro'
 import Logo from 'shared/_components/logo/index.astro'
 ---
 
-<x-header class="header">
+<header class="header">
 	<Container class="header__container">
 		<Logo style="width:46px; height 42px" />
 		<nav class="header__menu">
@@ -14,7 +14,7 @@ import Logo from 'shared/_components/logo/index.astro'
 			<a href="https://medium.com/jails-org" target="_blank">Blog</a>
 		</nav>
 	</Container>
-</x-header>
+</header>
 
 <style lang="styl">
 	.header
@@ -43,7 +43,12 @@ import Logo from 'shared/_components/logo/index.astro'
 			flex-wrap wrap
 
 			+below('tablet')
-				gap 5px
+				flex-wrap nowrap
+				gap 25px
+				overflow-x auto
+				padding 15px 20px 10px
+				padding-left 0
+
 			+above('tablet')
 				gap 30px
 
