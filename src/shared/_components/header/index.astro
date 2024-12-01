@@ -5,7 +5,7 @@ import Logo from 'shared/_components/logo/index.astro'
 
 <header class="header">
 	<Container class="header__container">
-		<Logo style="width:46px; height 42px" />
+		<Logo style="width:56px; height: 56px" />
 		<nav class="header__menu">
 			<a href="https://jails-org.github.io/" target="_blank">Documentation</a>
 			<a href="https://stackblitz.com/@Javiani/collections/jails-organization" target="_blank">Playground</a>
@@ -29,18 +29,20 @@ import Logo from 'shared/_components/logo/index.astro'
 
 		&__container
 			align-items center
-			+above('tablet')
-				display flex
+			display flex
 
-		&__logo
+		.logo
 			margin-bottom 10px
+			margin-right 40px
 
 		&__menu
 			display flex
 			justify-content space-between
 			text-transform uppercase
-			margin-left auto
 			flex-wrap wrap
+			margin-left 20px
+			+above('tablet')
+				margin-left auto
 
 			+below('tablet')
 				flex-wrap nowrap

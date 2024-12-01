@@ -34,13 +34,15 @@ import Logo from 'shared/_components/logo/index.astro'
 			position absolute
 			bottom 10px
 			left 0
-			transform rotate(90deg);
-			width 50px;
-			height 50px;
+			transform rotate(90deg)
+			width 50px
+			height 50px
 			font-size 20px
 			text-align center
 			width 100%
-
+			display none
+			+above('tablet')
+				display block
 
 
 		&__call
