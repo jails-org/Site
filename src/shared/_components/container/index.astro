@@ -1,24 +1,8 @@
 ---
-const {wide} = Astro.props
-const cssClass = Astro.props['class'] || ''
-const cssWide = wide? 'container__wide' : ''
-
+const props = Astro.props
+const css = props.class || ''
 ---
 
-<div class={`container ${cssClass} ${cssWide}`}>
+<div class={`mx-auto px-5 md:max-w-6xl xl:px-0 ${css}`}>
 	<slot />
 </div>
-
-<style lang="styl">
-
-	.container
-		max-width 1024px
-		margin 0 auto
-
-		+below('desktop')
-			padding-left 30px
-			padding-right 30px
-
-		&__wide
-			max-width 100%
-</style>

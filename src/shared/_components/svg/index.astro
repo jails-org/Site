@@ -1,0 +1,8 @@
+---
+const {name, color, class:css } = Astro.props
+const icon = await import(`../../../../public/${name}.svg?raw`)
+---
+
+<span style=`fill:${color}` class=`${css}`>
+	<Fragment set:html={icon.default}  />
+</span>

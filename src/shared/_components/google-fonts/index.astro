@@ -1,0 +1,17 @@
+---
+const { family } = Astro.props
+---
+
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+{
+	family.map( font => (
+		<>
+			<link rel="preload" href={`https://fonts.googleapis.com/css?family=${font}&display=swap`} as="style" />
+			<link rel="stylesheet" href={`https://fonts.googleapis.com/css?family=${font}&display=swap`} media="print" onload="this.media='all'" />
+			<noscript>
+				<link rel="stylesheet" href={`https://fonts.googleapis.com/css?family=${font}&display=swap`} />
+			</noscript>
+		</>
+	))
+}

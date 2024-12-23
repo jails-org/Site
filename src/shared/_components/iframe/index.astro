@@ -7,14 +7,14 @@ const { src, ...options } = props
 <script>
 	import { register } from 'shared/main'
 	import * as iframe from './index'
-	register('x-iframe', iframe)
+	register('app-iframe', iframe)
 </script>
 
-<x-iframe>
+<app-iframe>
 	<iframe data-src={src} {...options}></iframe>
-</x-iframe>
+</app-iframe>
 
-<style lang="styl">
+<style>
 	x-iframe {
 		display:block
 	}
