@@ -23,8 +23,12 @@ import GoogleFonts from 'shared/_components/google-fonts/index.astro'
             <slot name="content" />
 		</x-application>
 		<slot name="footer" />
-		<script is:inline data-name="analytics" type="text/third-party">
-			console.log('Third Party script body executed')
+		<!-- Google tag (gtag.js) -->
+		<script is:inline data-name="analytics" type="text/third-party" src="https://www.googletagmanager.com/gtag/js?id=G-621623ZSE9">
+			window.dataLayer = window.dataLayer || [];
+			function gtag(){dataLayer.push(arguments)};
+			gtag('js', new Date());
+			gtag('config', 'G-621623ZSE9');
 		</script>
 	</body>
 </html>
