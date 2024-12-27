@@ -1,14 +1,20 @@
 ---
-import Layout from 'layouts/default.astro'
-import Hero from './_components/hero/index.astro'
-import Features from './_components/features/index.astro'
-import Footer from './_components/footer/index.astro'
+import Layout   	from 'layouts/default.astro'
+import Hero 		from './_components/hero/index.astro'
+import Features 	from './_components/features/index.astro'
+import Example  	from './_components/example/index.astro'
 ---
 
 <Layout>
-	<Fragment slot="content">
+
+	<main class="home">
 		<Hero />
 		<Features />
-		<Footer />
-	</Fragment>
+		<Example />
+    </main>
+
+	<style lang="styl" is:global>
+		//
+	</style>
+
 </Layout>

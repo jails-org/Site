@@ -1,12 +1,24 @@
-import { type Component } from 'jails-js'
-import { isVisible } from 'jails.pandora/events'
+import { isVisible, throttle } from 'shared/_utils'
 
-export default async function iframe ({ main, elm } : Component) {
-	
+export default function iframe ({ main, elm }) {
+
 	const iframe = elm.querySelector('iframe')
-	await isVisible( elm )
 
-	main(() => {
-		iframe.src = iframe.dataset.src
-	})
+	main( _ => [
+		events,
+		check
+	])
+
+	const events = () => {
+		window.addEventListener('scroll', onscroll)
+	}
+
+	const check = () => {
+		if(isVisible(elm, -100)) {
+			iframe.src = iframe.dataset.src
+			window.removeEventListener('scroll', onscroll)
+		}
+	}
+
+	const onscroll = throttle(check, 150)
 }

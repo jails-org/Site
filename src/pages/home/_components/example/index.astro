@@ -1,0 +1,52 @@
+---
+import Container from 'shared/_components/container/index.astro'
+import Iframe from 'shared/_components/iframe/index.astro'
+---
+
+
+<section class="example" id="example">
+	<h2>Code Show</h2>
+	<br />
+	<br />
+	<Container>
+		<Iframe src="https://stackblitz.com/edit/jails-todomvc?embed=1&file=todo-app.ts"  />
+		<em>This example is an implementation of <a href="http://todomvc.com" target="_blank">todomvc.com</a></em>
+	</Container>
+</section>
+
+<style lang="styl">
+
+	.example
+		text-align center
+		color #0f172a
+		margin-top 80px
+		padding 80px 0
+
+		&__container
+			margin 0 auto
+
+		em
+			display block
+			padding 10px
+
+		&__title
+			padding 5px 0
+
+		h2
+			font-size 30px
+
+		h3
+			font-size 20px
+			color #00568b
+			font-weight bold
+
+		p
+			font-size 14px
+
+		iframe
+			border none
+			width 100%
+			height 700px
+			background url(https://eduardoottaviani.com.br/images/pulse-loading.svg) no-repeat center top
+
+</style>

@@ -1,23 +1,88 @@
 ---
 import Container from 'shared/_components/container/index.astro'
-import Header from '../header/index.astro'
-import Svg from 'shared/_components/svg/index.astro'
-
+import Header from 'shared/_components/header/index.astro'
+import Logo from 'shared/_components/logo/index.astro'
 ---
 
-<section class="hero border-slate-600 flex flex-col h-screen relative">
+<section class="hero">
 	<Header />
-	<Container class="items-center flex flex-1 w-full">
-		<div class="m-auto text-center">
-			<Svg name="favicon" class="logo block w-32 m-auto mb-8" />
-			<h1 class="font-thin text-8xl mr-auto">Jails</h1>
-			<h1 class="font-thin text-5xl mt-5 mb-2">A Minimalistic</h1>
-			<h2 class="font-thin text-3xl text-[#336699]">Web Components Library</h2>
-			<blockquote class="py-4">
-				<p class="font-thin text-xl text-neutral-400">“Simplicity is the ultimate sophistication”</p>
-				<cite class="text-gray-500 text-sm" title="Leonardo Da Vinci">— Leonardo Da Vinci</cite>
+	<Container class="hero__container">
+		<div class="hero__call">
+			<Logo style=" width: 150px; margin-right: 10px" />
+			<h2 class="hero__title">Jails.js</h2>
+			<h3 class="hero__subtitle">
+				An Elegant and Minimalistic <br />
+				Javascript Application Library
+			</h3>
+			<blockquote>
+				<p class="font-styled">“Simplicity is the ultimate sophistication”</p>
+				<cite title="Source Title">— Leonardo Da Vinci</cite>
 			</blockquote>
-			<a href="https://jails-org.github.io/#/" target="_blank" class="bg-[#25a] px-5 py-2 rounded-full inline-block my-8 font-light text-white">Getting Started</a>
 		</div>
+		<div class="arrow-down">❯</div>
 	</Container>
 </section>
+
+<style lang="styl">
+
+	.hero
+		min-height 100vh
+		display flex
+		align-items center
+
+		.arrow-down
+			position absolute
+			bottom 10px
+			left 0
+			transform rotate(90deg)
+			width 50px
+			height 50px
+			font-size 20px
+			text-align center
+			width 100%
+			display none
+			+above('tablet')
+				display block
+
+
+		&__call
+			text-align center
+
+		&__version
+			text-align center
+			font-family Arial
+			p
+				font-size 11px
+
+		&__mascot
+			display block
+			margin 0 auto
+
+		&__title
+			font-size 70px
+			+below('mobile')
+				text-align center
+
+
+		&__subtitle
+			font-size 36px
+			margin-bottom 10px
+			+below('mobile')
+				margin 0 auto
+				text-align center
+
+		blockquote
+
+			p
+				font-size 20px
+				font-weight 300
+			cite
+				font-size 12px
+				//
+
+		hr
+			border-bottom 1px solid yellow
+			display block
+			width 100%
+
+</style>

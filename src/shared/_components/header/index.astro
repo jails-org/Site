@@ -1,0 +1,61 @@
+---
+import Container from 'shared/_components/container/index.astro'
+import Logo from 'shared/_components/logo/index.astro'
+---
+
+<header class="header">
+	<Container class="header__container">
+		<Logo style="width:56px; height: 56px" />
+		<nav class="header__menu">
+			<a href="https://jails-org.github.io/" target="_blank">Documentation</a>
+			<a href="https://stackblitz.com/@Javiani/collections/jails-organization" target="_blank">Playground</a>
+			<a href="https://github.com/jails-org/Jails" target="_blank">Github</a>
+			<a href="https://github.com/jails-org/Jails/discussions" target="_blank">Discussions</a>
+			<a href="https://medium.com/jails-org" target="_blank">Blog</a>
+		</nav>
+	</Container>
+</header>
+
+<style lang="styl">
+	.header
+		position fixed
+		display block
+		padding 8px 0
+		top 0
+		width 100%
+		background-color #fff
+		box-shadow rgba(0, 0, 0, 0.1) 0px 4px 12px;
+		z-index 10
+
+		&__container
+			align-items center
+			display flex
+
+		.logo
+			margin-bottom 10px
+			margin-right 40px
+
+		&__menu
+			display flex
+			justify-content space-between
+			text-transform uppercase
+			flex-wrap wrap
+			margin-left 20px
+			+above('tablet')
+				margin-left auto
+
+			+below('tablet')
+				flex-wrap nowrap
+				gap 25px
+				overflow-x auto
+				padding 15px 20px 10px
+				padding-left 0
+
+			+above('tablet')
+				gap 30px
+
+			a
+				text-decoration none
+				font-size 14px
+
+</style>

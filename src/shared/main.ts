@@ -1,11 +1,13 @@
 import jails from 'jails-js'
-import * as application from './application'
+import { thirdParty } from './_utils'
 
 export const register = jails.register
 export const dependencies = {}
 
-jails.register('x-application', application, dependencies)
+export default function main (){
 
-export const main = () => {
-	jails.start()
+    document.addEventListener('DOMContentLoaded', () => {
+		jails.start()
+		thirdParty('analytics')
+    })
 }

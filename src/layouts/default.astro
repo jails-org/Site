@@ -1,31 +1,42 @@
 ---
-import GoogleFonts from 'shared/_components/google-fonts/index.astro'
+import Fonts from 'shared/_components/fonts/index.astro'
+import Footer from 'shared/_components/footer/index.astro'
 ---
+<html lang="en-us">
 
-<!doctype html>
-<html lang="en">
 	<head>
+
 		<title>Jails | An Elegant and Minimalistic Javascript Application Library</title>
+
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width" />
-		<link rel="icon" type="image/png" href="/favicon.svg" />
-		<GoogleFonts family={['Roboto:300,400,700']} />
-		<slot name="head" />
+		<meta name="description" content="Jails is a component library to add javascript behavior to Web Apps as close as possible to vanilla" />
+
+		<link rel="icon" type="image/svg+xml" href="/logo.svg" />
+		<link rel="preconnect" href="https://fonts.googleapis.com" />
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+		<Fonts />
+
+		<style lang="styl" is:global>
+			@require '../ui-system'
+		</style>
+
 		<script>
-			import { main } from 'shared/main' 
-			document.addEventListener( 'DOMContentLoaded', () => {
-				main()
-			})
+			import main from 'shared/main'
+			main()
 		</script>
 	</head>
-	<body class="bg-[url(/bg.png)] bg-[-10%_-7%] bg-[length:50%_auto] bg-no-repeat">
-		<x-application id="site">
-            <slot name="content" />
-		</x-application>
-		<slot name="footer" />
-		<script is:inline data-name="analytics" type="text/third-party">
-			console.log('Third Party script body executed')
+	<body>
+
+        <slot />
+		<Footer />
+		<!-- Google tag (gtag.js) -->
+		<script is:inline data-name="analytics" type="text/html" src="https://www.googletagmanager.com/gtag/js?id=G-621623ZSE9">
+			window.dataLayer = window.dataLayer || [];
+			function gtag(){dataLayer.push(arguments)};
+			gtag('js', new Date());
+			gtag('config', 'G-621623ZSE9');
 		</script>
 	</body>
 </html>
-

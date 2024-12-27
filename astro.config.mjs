@@ -1,11 +1,28 @@
-// @ts-check
 import { defineConfig } from 'astro/config'
-import tailwind from '@astrojs/tailwind'
+import compress from 'astro-compress'
+import critters from 'astro-critters'
+
+import rupture from 'rupture'
 
 // https://astro.build/config
 export default defineConfig({
-	devToolbar: {
-		enabled: false
-	},
-	integrations: [tailwind()]
+  integrations: [compress(), critters()],
+  vite: {
+    ssr: {
+      external: ['svgo']
+    },
+    css: {
+      preprocessorOptions: {
+        styl: {
+          use: rupture(),
+          paths: ['src', 'node_modules'],
+		  resolveURL : true,
+		  includeCSS : true,
+		  additionalData: `
+		  	@require 'ui-system/variables.styl'
+		  `
+        }
+      }
+    }
+  }
 })
