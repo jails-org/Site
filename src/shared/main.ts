@@ -6,6 +6,6 @@ export const dependencies = {}
 
 jails.register('x-application', application, dependencies)
 
-document.addEventListener('DOMContentLoaded', () => {
+export const main = () => {
 	jails.start()
-})
+}

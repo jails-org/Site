@@ -1,7 +1,6 @@
 ---
 const { props } = Astro
 const { src, ...options } = props
-
 ---
 
 <script>
@@ -13,9 +12,3 @@ const { src, ...options } = props
 <app-iframe>
 	<iframe data-src={src} {...options}></iframe>
 </app-iframe>
-
-<style>
-	x-iframe {
-		display:block
-	}
-</style>

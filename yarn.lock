@@ -2044,10 +2044,10 @@ jails-js@^5.8.5:
   dependencies:
     idiomorph "^0.3.0"
 
-jails.pandora@^1.1.1:
-  version "1.1.1"
-  resolved "https://registry.yarnpkg.com/jails.pandora/-/jails.pandora-1.1.1.tgz#0ebc0bd0ff9beb27b317ec199c05afcc4089eddc"
-  integrity sha512-F4ycov3T6S4by7Op5AnZqMCuXmCsfbWqWcYBcb/uI4u2UCGmhanJiycS6Kns0WihtYSmYClPpzNbpM+/JMCLog==
+jails.pandora@^1.5.0:
+  version "1.5.0"
+  resolved "https://registry.yarnpkg.com/jails.pandora/-/jails.pandora-1.5.0.tgz#5e7b2fc394b2d72728c8a6cb17827bcf1235e848"
+  integrity sha512-LeZaCTs7wXufNIcMYufpCvi3sAJMLfVWScGzDsvfql1KNtpdce+NQAhJjBygBGAyDciVJstcV8NwnydGYQEzzA==
   dependencies:
     "@javiani/onijs" "^0.0.17"
     "@preact/signals-core" "^1.5.1"

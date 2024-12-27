@@ -1,9 +1,9 @@
 import { type Component } from 'jails-js'
-import { thirdParty } from './_utils'
+import { thirdPartyScript } from 'jails.pandora/third-party'
 
 export default function application ({ main } : Component) {
 
-	const analytics = thirdParty('analytics')
+	const analytics = thirdPartyScript('analytics')
 
 	main( _ => {
 		onload()
