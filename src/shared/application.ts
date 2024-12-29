@@ -1,10 +1,10 @@
 import { type Component } from 'jails-js'
-import { thirdPartyScript } from 'jails.pandora/third-party'
-import Lazyload from 'jails.pandora/lazyload' 
+import { thirdParty } from 'jails.std/third-party'
+import { Lazyload } from 'jails.std/lazyload' 
 
 export default function application ({ main } : Component) {
 
-	const analytics = thirdPartyScript('analytics')
+	const analytics = thirdParty('analytics')
 
 	main( _ => {
 		onload()
