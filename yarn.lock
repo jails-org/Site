@@ -1773,10 +1773,10 @@ iconv-lite@0.6.3:
   dependencies:
     safer-buffer ">= 2.1.2 < 3.0.0"
 
-idiomorph@^0.3.0:
-  version "0.3.0"
-  resolved "https://registry.yarnpkg.com/idiomorph/-/idiomorph-0.3.0.tgz#f6675bc5bef1a72c94021e43141a3f605d2d6288"
-  integrity sha512-UhV1Ey5xCxIwR9B+OgIjQa+1Jx99XQ1vQHUsKBU1RpQzCx1u+b+N6SOXgf5mEJDqemUI/ffccu6+71l2mJUsRA==
+idiomorph@^0.4.0:
+  version "0.4.0"
+  resolved "https://registry.yarnpkg.com/idiomorph/-/idiomorph-0.4.0.tgz#ba63a7a73cf6b8db74acec6e22b7c98341e7d548"
+  integrity sha512-VdXFpZOTXhLatJmhCWJR5oQKLXT01O6sFCJqT0/EqG71C4tYZdPJ5etvttwWsT2WKRYWz160XkNr1DUqXNMZHg==
 
 import-meta-resolve@^4.1.0:
   version "4.1.0"
@@ -1872,12 +1872,12 @@ jackspeak@^3.1.2:
   optionalDependencies:
     "@pkgjs/parseargs" "^0.11.0"
 
-jails-js@^5.8.5:
-  version "5.8.5"
-  resolved "https://registry.yarnpkg.com/jails-js/-/jails-js-5.8.5.tgz#f30eab5d2680280fe711dc5303786e4fa060f371"
-  integrity sha512-jUrINA4fhHj4WtOLSoZ90W73Szc1NeohGeeAwFrwG3SjtYJk5XgJ9TVcQbN0HtFyZHyinly8M1IQ3aeI5BZmcw==
+jails-js@^5.8.7:
+  version "5.8.7"
+  resolved "https://registry.yarnpkg.com/jails-js/-/jails-js-5.8.7.tgz#48932e15ac2827e312e3b747bdb96e9d58078343"
+  integrity sha512-OvuMbL0exrGY1Fe4940zJDmzeZw9Z+jI224mB7G/7Id/G1KUIMm01APt28FTZ4ULq1jOpLOgIi1AWYXa+VcfFA==
   dependencies:
-    idiomorph "^0.3.0"
+    idiomorph "^0.4.0"
 
 jails.pandora@^1.6.0:
   version "1.6.0"
@@ -1892,10 +1892,10 @@ jails.pandora@^1.6.0:
     vanilla-lazyload "^19.1.3"
     vite "^5.0.11"
 
-jails.std@^0.0.3:
-  version "0.0.3"
-  resolved "https://registry.yarnpkg.com/jails.std/-/jails.std-0.0.3.tgz#114149af377ce2899dffee435b010ae38ccb332c"
-  integrity sha512-66wqsS7xEIEBmvVw/lhn2NDTraKVZ9dnkq9iFX79/+jYwN5CgyBsuW6DfGCNYacRZyrLRBUPpmGDQjaWVp8S1w==
+jails.std@^0.0.4:
+  version "0.0.4"
+  resolved "https://registry.yarnpkg.com/jails.std/-/jails.std-0.0.4.tgz#464b9f569f9820cfd70b0c0c0193eced785ed76d"
+  integrity sha512-ZrN5/8aPrcMJGKNNHbBhR7HkhZDoUEkDK0K6esn8BH8ObEKMShkKawmvWYS0hxedpMUaAYiwg6MC/B/u1m21Zg==
   dependencies:
     "@javiani/onijs" "^0.0.17"
     "@types/node" "^20.10.7"

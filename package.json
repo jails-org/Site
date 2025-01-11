@@ -11,9 +11,9 @@
   "dependencies": {
     "@astrojs/tailwind": "^5.1.4",
     "astro": "^5.1.1",
-    "jails-js": "^5.8.5",
+    "jails-js": "^5.8.7",
     "jails.pandora": "^1.6.0",
-    "jails.std": "^0.0.3",
+    "jails.std": "^0.0.4",
     "jsdom": "^25.0.1",
     "tailwindcss": "^3.4.17",
     "vitest": "^2.1.8"

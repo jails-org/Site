@@ -1,6 +1,6 @@
 import { type Component } from 'jails-js'
 import { thirdParty } from 'jails.std/third-party'
-import { Lazyload } from 'jails.std/lazyload' 
+import { Lazyload } from 'jails.std/lazyload-image' 
 
 export default function application ({ main } : Component) {
 

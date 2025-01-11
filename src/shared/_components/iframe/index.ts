@@ -1,5 +1,5 @@
 import { type Component } from 'jails-js'
-import { isVisible } from 'jails.pandora/events'
+import { isVisible } from 'jails.std/is-visible'
 
 export default async function iframe ({ main, elm } : Component) {
 	
