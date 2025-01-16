@@ -9,7 +9,7 @@ But you can also use  mustache syntax `{{}}` for simple variable interpolations,
 Directives and mustache delimiters `{{}}` processes values as valid Javascript expressions.
 
 :::tip[Tip]
-To change default mustach delimiters: `jails.templateConfig({ tags: ['@{', '}'``] })`
+To change default mustach delimiters: `jails.templateConfig({ tags: ["@{", "}"] })`
 :::
 
 

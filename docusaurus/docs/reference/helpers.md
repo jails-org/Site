@@ -407,7 +407,7 @@ You can listen to that global event using `subscribe` which will be cover next.
 
 ### `subscribe`
 ```ts 
-subscribe( event: string, callback: Function )
+subscribe( event: string, callback: Function ) : unsubscribe: Function
 ```
 Subscribes to a custom event globally, enabling communication between sibling components or components located in different trees.
 
@@ -424,6 +424,8 @@ export default function anotherComponent ({ main, on, subscribe }) {
 }
 
 ```
+
+Subscribe returns a `unsubscribe` function. So you can remove the listener just by calling the returned function.
 
 ---
 

@@ -2,7 +2,7 @@
 sidebar_position: 1
 ---
 
-# Quick Start
+# Getting Started
 
 Let's get started by installing the library using either npm or yarn, and creating our very first `Hello World` component.
 
@@ -46,17 +46,18 @@ Every Jails component is a JavaScript module that will need to be imported into 
 
 ```ts
 export default function helloWorld ({ main, on }) {
+  
   main(() => {
-      on('click', 'button.add', add)
-      on('click', 'button.subtract', subtract)
+    on('click', 'button.add', add)
+    on('click', 'button.subtract', subtract)
   })
 
   const add = () => {
-      state.set( s => s.counter += 1 )
+    state.set( s => s.counter += 1 )
   }
 
   const subtract = () => {
-      state.set( s => s.counter -= 1 )
+     state.set( s => s.counter -= 1 )
   }
 }
 ```
@@ -102,5 +103,3 @@ Think of its components as **Web Components on Steroids**, harnessing modern tec
 - Todo App 
 
 ... and more here : https://stackblitz.com/@Javiani/collections/jails-organization
-
-
