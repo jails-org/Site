@@ -1,10 +1,10 @@
 {
-  "name": "",
+  "name": "jails-site",
   "type": "module",
   "version": "0.0.1",
   "scripts": {
     "dev": "astro dev --port 3000",
-    "build": "astro build",
+    "build": "astro build && cd docusaurus/ && npm run build",
     "preview": "astro preview",
     "astro": "astro"
   },
