@@ -8,6 +8,8 @@ Jails uses directives in HTML as a language to connect seamlessly with the compo
 But you can also use  mustache syntax `{{}}` for simple variable interpolations, you're gonna see it in action along the examples.
 Directives and mustache delimiters `{{}}` processes values as valid Javascript expressions.
 
+---
+
 :::tip[Tip]
 To change default mustach delimiters: `jails.templateConfig({ tags: ["@{", "}"] })`
 :::

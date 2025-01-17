@@ -6,6 +6,8 @@ sidebar_position: 2
 
 Components are JavaScript modules that add behavior to `Custom Element` in HTML. They treat HTML as a data source to extract: **Values, Information, Events, and Directives**, which are then used to update the DOM.
 
+---
+
 Each component consists of four types of exported functionalities:
 
 - **Controller** Default Function. **`Required`**
@@ -29,10 +31,36 @@ export default function myComponent ({ main, elm, on, state }) {
   })
 
   const add = () => {
-    state.set( counter => counter += 1 )
+    state.set( s => s.counter += 1 )
   }
 } 
 ```
+
+## Async Controller Default Function
+You can also define it as `async` if you want to use `await` keyword before code execution.
+
+```ts 
+
+export default async function myComponent ({ main, elm, on, state }) {
+  
+  const data = await getSomething('/some/service')
+
+  main(() => {
+    on('click', '[data-add]', add)
+  })
+
+  const add = () => {
+    state.set( s => s.counter += 1 )
+  }
+}
+```
+
+:::warning[Caution]
+Keep in mind that when using **async / await**, everything below the `await` keyword will not execute until the promise is resolved.
+:::
+
+---
+
 
 ## Model Object
 
@@ -124,7 +152,7 @@ Components in Jails are designed to enhance already-rendered HTML, making them p
 The `template` function handles the rendering of the component's HTML in an embedded manner, providing a seamless, out-of-the-box experience.
 
 ```ts
-import { html } from 'jails-js/html'
+import { html, attributes } from 'jails-js/html'
 
 export default function myComponent ({ main, on, state }) {
 
@@ -145,8 +173,8 @@ export const model = {
 export const template = ({ children }) => {
   return html`
     ${children}
-    <div class="bigger">11</div>
-    <button data-add>+</button>
+    <div class="bigger">{{counter}}</div>
+    <button data-add ${attributes({ id: 'my-button-id' })}>+</button>
   `
 }
 ```
@@ -165,6 +193,6 @@ Result would be:
   <my-component>
     <h2>Counter</h2>
     <div>0</div>
-    <button data-add>+</button>
+    <button data-add id="my-button-id">+</button>
   </my-component>
 ```

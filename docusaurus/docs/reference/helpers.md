@@ -8,6 +8,7 @@ Helpers are a set of scoped abstractions and functionalities tied to the context
 
 They simplify UI development by providing intuitive tools that remain as close as possible to the experience of developing with Vanilla JavaScript.
 
+---
 
 ## `main`
 ```ts 
@@ -58,11 +59,8 @@ const options = {
 
 ```
 
-:::tip[Conclusion]
-
 In the code above, you'll notice that the implementation of methods is placed further down, while the definitions for event subscriptions and the actions that occur when the component is mounted are positioned right at the beginning. This structure ensures that the functionalities and execution flows are immediately clear, providing a clean and intuitive overview right at the start of the code.
 
-:::
 
 ---
 

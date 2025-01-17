@@ -15,8 +15,8 @@ const config: Config = {
     },
   ],
 
-  title: 'My Site',
-  tagline: 'Dinosaurs are cool',
+  title: 'Jails Documentation',
+  tagline: 'A Minimalistic Web Components Library',
   favicon: 'img/logo.svg',
 
   // Set the production url of your site here
@@ -78,6 +78,7 @@ const config: Config = {
           href: 'https://github.com/jails-org/jails',
           label: 'GitHub',
           position: 'right',
+          target: '_self'
         },
       ],
     },

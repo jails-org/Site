@@ -6,6 +6,8 @@ sidebar_position: 1
 
 Let's get started by installing the library using either npm or yarn, and creating our very first `Hello World` component.
 
+---
+
 ## Installing
 
 Just like any other npm module, make sure to add it to your project dependencies.

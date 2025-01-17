@@ -6,6 +6,7 @@ sidebar_position: 4
 
 Jails is an singleton, so it wasn't made to have multiple instances. So you can access most of Jails api throught it static methods.
 
+---
 
 ## start
 ```ts
@@ -84,3 +85,47 @@ subscribe( name:string, fn: Function<data> )
 
 A pub/sub pattern interface that you can use to comunicate globally with any of your components. <br />
 They're exacly the same [pub/sub functions helpers](/reference/docs/reference/helpers#publish) used on components.
+
+
+## html & attributes
+Directives for working with template strings. 
+
+```ts
+import { html, attributes } from 'jails-js/html'
+
+export default function appCounter ({ main, state }) {
+
+  main(() => {
+    on('click', '[data-add]', add)
+  })
+
+  const add = () => {
+    state.set( s => s.counter+= 1 )
+  }
+}
+
+export const model = {
+  counter: 0
+}
+
+export const template = ({ children }) => {
+  return html`
+    <section ${attributes({ title: 'Hello, I am Title!'})}>
+      <h1>My Counter</h1>
+      {{counter}}
+      ${children}
+    </section>
+  `
+}
+```
+
+<br />
+
+:::tip[Tip]
+We recommend using the [lit-html extension](https://marketplace.visualstudio.com/items?itemName=bierner.lit-html) for VSCode to enable syntax highlighting for HTML code within your JavaScript files.
+:::
+
+<br />
+
+![](https://github.com/mjbvz/vscode-lit-html/raw/master/docs/example.gif)
+

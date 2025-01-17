@@ -31,5 +31,9 @@
 
 .navbar__title {
   font-weight: 300;
-  font-size: 25px;
+  font-size: 30px;
+}
+
+.navbar__logo{
+  height: 40px;
 }
