@@ -49,6 +49,7 @@ const config: Config = {
       {
         docs: {
           sidebarPath: './sidebars.ts',
+          sidebarCollapsible: false
         },
         theme: {
           customCss: './src/css/custom.css',
