@@ -36,7 +36,7 @@ jails.register('my-component', myComponent)
 ---
 
 :::tip[Dependency Injection]
-The third parameter is optional and refers to any instance, class, function, or object you want to pass to your component via the [dependencies](/reference/docs/reference/helpers#dependencies) helper.
+The third parameter is optional and refers to any instance, class, function, or object you want to pass to your component via the [dependencies](/about/docs/reference/helpers#dependencies) helper.
 :::
 
 **Example**
@@ -84,7 +84,7 @@ subscribe( name:string, fn: Function<data> )
 ```
 
 A pub/sub pattern interface that you can use to comunicate globally with any of your components. <br />
-They're exacly the same [pub/sub functions helpers](/reference/docs/reference/helpers#publish) used on components.
+They're exacly the same [pub/sub functions helpers](/about/docs/reference/helpers#publish) used on components.
 
 
 ## html & attributes

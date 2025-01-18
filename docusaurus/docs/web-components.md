@@ -77,7 +77,7 @@ Fully featured refers to `Web Components` that have all their HTML embedded, all
 
 
 ### Counter App Example
-In order to write the fully feature Web Component, we can use the [Template Function](http://localhost:3000/reference/docs/reference/components#template-function) feature
+In order to write the fully feature Web Component, we can use the [Template Function](http://localhost:3000/about/docs/reference/components#template-function) feature
 
 
 ```ts
