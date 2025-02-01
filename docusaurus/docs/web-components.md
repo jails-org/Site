@@ -125,13 +125,13 @@ In order to use on another application you just have to have `jails-js` installe
 
 
 ```ts
-import jails from 'jails-js'
+import { register, start } from 'jails-js'
 import * as appCounter from '@my-org/components/counter'
 ... 
 
 ///All web components registered on my main.js file
-jails.register('app-counter', appCounter)
-jails.start()
+register('app-counter', appCounter)
+start()
 ```
 
 **Usage**

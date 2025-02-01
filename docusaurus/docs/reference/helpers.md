@@ -196,9 +196,10 @@ A great example is the `form-validation` component. Each country has its own spe
 
 **On Registration**
 ```ts 
+import { register } from 'jails-js'
 import { validations, masks } from 'utils/form/validations'
 import * as formValidation from 'jails.std/form-validation'
-jails.register('form-validation', formValidation, { validations, masks })
+register('form-validation', formValidation, { validations, masks })
 
 ```
 
