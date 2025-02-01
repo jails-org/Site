@@ -1,11 +1,11 @@
-import jails from 'jails-js'
+import { start, register } from 'jails-js'
 import * as application from './application'
 
-export const register = jails.register
+export { register } from 'jails-js'
 export const dependencies = {}
 
-jails.register('x-application', application, dependencies)
+register('x-application', application, dependencies)
 
 export const main = () => {
-	jails.start()
+	start()
 }
