@@ -10,7 +10,7 @@ Jails is an singleton, so it wasn't made to have multiple instances. So you can 
 
 ## start
 ```ts
-jails.start( target?: HTMLElement )
+start( target?: HTMLElement )
 ```
 
 After registering all the components on your page, you need to call the `.start()` method. This will trigger a scan of all registered components in the HTML and initiate their bootstrap process. You can specify the root element for this scan; otherwise, it will default to document.body.
@@ -21,7 +21,7 @@ The method is designed to be called multiple times, but avoid doing so unnecessa
 
 ## register
 ```ts
-jails.register( name: string, module: Module, dependencies?: object )
+register( name: string, module: Module, dependencies?: object )
 ```
 
 Method used to register custom elements in the HTML.
@@ -29,7 +29,7 @@ Method used to register custom elements in the HTML.
 **Example**
 ```ts
 import * as myComponent from '/components/my-component'
-jails.register('my-component', myComponent)
+register('my-component', myComponent)
 
 ```
 
@@ -44,9 +44,10 @@ The third parameter is optional and refers to any instance, class, function, or 
 
 ```main.js ```
 ```ts
+import { register } from 'jails-js'
 import http from 'shared/utils/http'
 import * as myComponent from '/components/my-component'
-jails.register('my-component', myComponent, { http })
+register('my-component', myComponent, { http })
 ```
 
 ---

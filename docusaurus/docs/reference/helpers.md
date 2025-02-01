@@ -154,6 +154,38 @@ state.get() // Returns the entire state e.g : { isVisible: false, title: '', ...
 Returns the entire object of your current state  
 
 
+### protected
+```ts
+state.protected( props: Array )
+```
+
+Prevents child component props to be overwritten by parent updates.
+
+```ts 
+export default function myComponent ({ main, state }) {
+
+  state.protected(['counter'])
+
+  main(() => {
+    //...
+  })
+
+  //...
+}
+
+export const model = {
+  counter : 0
+}
+
+```
+
+:::tip[tip]
+
+Use this feature only when you're facing inconcistencies updates on your project. For the most use cases its convenient to have parent props updates in your child components.
+
+:::
+
+
 ---
 
 ## `dependencies`

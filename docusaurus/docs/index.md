@@ -83,13 +83,13 @@ Now, we need to register this component, which means attaching the behavior to t
 `main.js` 
 
 ```ts
-import jails from 'jails-js'
+import { register, start } from 'jails-js'
 import * as helloWorld from 'components/hello-world'
 
-jails.register('hello-world', helloWorld)
+register('hello-world', helloWorld)
 //... the Rest of your components in the page.
 
-jails.start()
+start()
 ```
 
 ## That's it
