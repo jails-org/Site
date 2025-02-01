@@ -76,7 +76,7 @@ The model initializes the component's state while also serving as documentation,
 ```ts 
 import type { Component, Model } from 'jails-js/types'
 
-export default function myComponent ({ main, elm, on, state }: Component) {
+export default function myComponent ({ main, on, state }: Component) {
 
   main(() => {
     on('click', '[data-add]', add)
@@ -103,7 +103,7 @@ Sometimes, we need to enhance the data passed to our view (HTML) by formatting c
 ```ts 
 import type { Component, Model, View } from 'jails-js/types'
 
-export default function myComponent ({ main, elm, on, state }: Component) {
+export default function myComponent ({ main, on, state }: Component) {
 
   main(() => {
     on('click', '[data-add]', add)
