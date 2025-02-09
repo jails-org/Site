@@ -93,6 +93,18 @@ export const model: Model = {
 }
 ```
 
+You can also use the `Function` version which provides the `HTMLElement` element of the component so you can retrieve some data from the html such as dataset, attributes etc.
+
+```ts 
+export const model: Model = ({ elm, initialState }) => {
+  // initialState is retrieved from : <my-component html-model="{name: 'my-name'}">
+  const counter = Number(elm.dataset.counter) // <my-component data-counter="10">
+  return {
+    counter
+  }
+}
+```
+x
 ## View Function
 ```ts 
 export const view: View = ( state: any ) => state : any
