@@ -462,57 +462,6 @@ Subscribe returns a `unsubscribe` function. So you can remove the listener just 
 
 ## lifecycle
 
-
-### `onupdate`
-```ts
-onupdate( callback: Function ) : void
-```
-
-`onupdate` helper takes a callback that will be executed when parent component is re-rendered. Parent component will always update children components, you can use it to get parent props and update the children component.
-
-```ts 
-export default function myChildComponent ({ main, elm, onupdate }) {
-
-    main( _ => {
-        
-    })
-
-    onupdate((props) => {
-        console.log('Getting parent props', props) // { parentTitle: 'Hello World' }
-        props.parentTitle = `Hi I am from parent: ${props.parentTitle}`
-    })
-}
-
-export const model = {
-  childTitle: 'Hello World'
-}
-```
-
-```html
-<my-child-component>
-  <h1>{{ childTitle }}<h1>
-  <h2>{{ parentTitle }}</h1>
-</my-child-component> 
-```
-
-**Result**
-
-```html
-<my-child-component>
-  <h1>Hello World<h1>
-  <h2>Hi I'm from parent: Hello World</h1>
-</my-child-component> 
-```
-
-:::tip[Important]
-
-Every `state.set` calls will cause updates on the component view and also in its children components view.
-So `onupdate` can be used to change props without having to set state again on children component.
-
-:::
-
----
-
 ### `unmount`
 ```ts
 unmount( callback: Function ) : void
