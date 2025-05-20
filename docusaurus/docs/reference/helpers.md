@@ -75,6 +75,36 @@ You can check the code above in the `main` section so you can see how it's used 
 
 ---
 
+## `dataset`
+A function that parses the value of a component or one of its children.
+
+```ts
+dataset( key: string ) : any | dataset( target, key:string ) : any
+```
+
+**Usage**
+
+```html
+<my-component data-config="{ name: 'my-name', age: 41 }">
+<!-- -->
+</my-component>
+```
+
+```ts
+export default function myComponent({ main, dataset }){
+
+  const { name, age } = dataset('config')  
+ 
+  main(() => {
+    console.log({  name, age })
+  })
+
+}
+```
+
+
+---
+
 ## `state`
 **state** is a helper used to manage the local state of a component. Whenever the state changes, the component updates the HTML by leveraging directives and the current state values. You can use the object form when you want to update a specific property or use the function form if you want to get the current state data in order to update the state.
 
