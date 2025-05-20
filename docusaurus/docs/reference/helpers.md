@@ -102,6 +102,38 @@ export default function myComponent({ main, dataset }){
 }
 ```
 
+---
+
+## `attributes`
+A function that provides a way to bind a change event on the component element attributes.
+
+```ts
+attributes( target?: HTMLElement ) : { onchange( attribute: string, callback: Function ), disconnect( callback: Function ) }
+```
+
+**Usage**
+
+```ts
+export default function appComponent ({ main, attributes }) {
+  
+  const attrs = attributes()
+
+  main(() => {
+    attrs.onchange('src', onchangesrc)
+    //attrs.disconnect( onchangesrc ) to unregister
+  })
+
+  const onchangesrc = ( key, value ) => {
+    console.log(`The ${key} parameter was changed to ${value}`)
+  }
+}
+```
+
+:::tip[help]
+
+All registered events will be unregistered automatically when component is unmount
+
+:::
 
 ---
 
@@ -131,6 +163,7 @@ state.set( newprops: object ) : Promise | state.set( (currentState: object) => v
 The `html-if` part in the html example code is a Template System feature, you can check it out in the **Template System** section.
 
 :::
+
 
 
 **The component:**
