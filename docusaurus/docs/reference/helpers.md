@@ -104,23 +104,23 @@ export default function myComponent({ main, dataset }){
 
 ---
 
-## `attributes`
+## `attr`
 A function that provides a way to bind a change event on the component element attributes.
 
 ```ts
-attributes( target?: HTMLElement ) : { onchange( attribute: string, callback: Function ), disconnect( callback: Function ) }
+attr( target?: HTMLElement ) : { change( attribute: string, callback: Function ), disconnect( callback: Function ) }
 ```
 
 **Usage**
 
 ```ts
-export default function appComponent ({ main, attributes }) {
+export default function appComponent ({ main, attr }) {
   
-  const attrs = attributes()
+  const attributes = attr()
 
   main(() => {
-    attrs.onchange('src', onchangesrc)
-    //attrs.disconnect( onchangesrc ) to unregister
+    attributes.change('src', onchangesrc)
+    //attributes.disconnect( onchangesrc ) to unregister
   })
 
   const onchangesrc = ( key, value ) => {
