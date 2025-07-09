@@ -516,7 +516,7 @@ Subscribe returns a `unsubscribe` function. So you can remove the listener just 
 
 ## **lifecycle**
 
-### `unmount`
+## `unmount`
 ```ts
 unmount( callback: Function ) : void
 ```
