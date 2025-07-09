@@ -10,6 +10,8 @@ They simplify UI development by providing intuitive tools that remain as close a
 
 ---
 
+## **Basics**
+
 ## `main`
 ```ts 
 main( fn:Function ) : void
@@ -104,44 +106,12 @@ export default function myComponent({ main, dataset }){
 
 ---
 
-## `attr`
-A function that provides a way to bind a change event on the component element attributes.
 
-```ts
-attr( target?: HTMLElement ) : { change( attribute: string, callback: Function ), disconnect( callback: Function ) }
-```
-
-**Usage**
-
-```ts
-export default function appComponent ({ main, attr }) {
-  
-  const attributes = attr()
-
-  main(() => {
-    attributes.change('src', onchangesrc)
-    //attributes.disconnect( onchangesrc ) to unregister
-  })
-
-  const onchangesrc = ( key, value ) => {
-    console.log(`The ${key} parameter was changed to ${value}`)
-  }
-}
-```
-
-:::tip[help]
-
-All registered events will be unregistered automatically when component is unmount
-
-:::
-
----
-
-## `state`
+## **State Managment**
 **state** is a helper used to manage the local state of a component. Whenever the state changes, the component updates the HTML by leveraging directives and the current state values. You can use the object form when you want to update a specific property or use the function form if you want to get the current state data in order to update the state.
 
 
-### set
+## `set`
 ```ts
 state.set( newprops: object ) : Promise | state.set( (currentState: object) => void ) : Promise
 ```
@@ -210,14 +180,14 @@ state.set({ isVisible: false })
 ```
 
 
-### get
+## `get`
 ```ts 
 state.get() // Returns the entire state e.g : { isVisible: false, title: '', ...etc }
 ```
 Returns the entire object of your current state  
 
 
-### protected
+## `protected`
 ```ts
 state.protected( props: Array )
 ```
@@ -332,11 +302,11 @@ export default function mycomponent ({ main, elm, on, innerHTML }) {
 ---
 
 
-## events
+## **Events**
 
 Events are a powerful tool to sending messages from children to parent nodes, it's a widely adopted pattern and very familiar to javascript developers. Jails extends this feature with some sugar.
 
-### `on`
+## `on`
 
 ```ts 
 on( event:string, cssSelector: string, callback: function )
@@ -378,10 +348,31 @@ Jails augments the `event:Event` object with `e.delegateTarget` property because
 
 :::
 
+## `on(change[attribute])`
+This is a special case for listening to attributes changes. 
+
+It works in the component and its children.
+
+Ex.
+```ts 
+export default function inputExample ({ main, elm, on }) {
+
+  main(() => {
+    on('change[src]', 'iframe', iframeSrcChange)
+  })
+
+  const iframeSrcChange = ({ target, value, attribute }) => {
+    console.log({ target, value, attribute })
+  }
+}
+
+```
+
+
 ---
 
 
-### `off`
+## `off`
 
 ```ts 
 off( event:string, callback: function )
@@ -406,7 +397,7 @@ export default function myComponent ({ main, off }) {
 
 ---
 
-### `emit`
+## `emit`
 
 ```ts 
 emit( event:string, data: object )
@@ -452,7 +443,7 @@ Emitted events are bubbled up just like any DOM Events. They can be prevented ju
 
 ---
 
-### `trigger`
+## `trigger`
 ```ts 
 trigger( event: string, data: object )
 ```
@@ -473,7 +464,7 @@ trigger('click', 'button', { anotherparam:true })
 
 ---
 
-### `publish`
+## `publish`
 ```ts 
 publish( event: string, data?: any )
 ```
@@ -499,7 +490,7 @@ You can listen to that global event using `subscribe` which will be cover next.
 
 ---
 
-### `subscribe`
+## `subscribe`
 ```ts 
 subscribe( event: string, callback: Function ) : unsubscribe: Function
 ```
@@ -523,7 +514,7 @@ Subscribe returns a `unsubscribe` function. So you can remove the listener just 
 
 ---
 
-## lifecycle
+## **lifecycle**
 
 ### `unmount`
 ```ts
