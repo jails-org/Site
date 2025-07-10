@@ -348,17 +348,15 @@ Jails augments the `event:Event` object with `e.delegateTarget` property because
 
 :::
 
-## `on(change[attribute])`
-This is a special case for listening to attributes changes. 
-
-It works in the component and its children.
+## `on([attribute])`
+This is a special case for listening to attributes changes. It works in the component and its children.
 
 Ex.
 ```ts 
-export default function inputExample ({ main, elm, on }) {
+export default function iframeExample ({ main, on }) {
 
   main(() => {
-    on('change[src]', 'iframe', iframeSrcChange)
+    on('[src]', 'iframe', iframeSrcChange)
   })
 
   const iframeSrcChange = ({ target, value, attribute }) => {
