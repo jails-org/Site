@@ -2076,10 +2076,10 @@ jackspeak@^3.1.2:
   optionalDependencies:
     "@pkgjs/parseargs" "^0.11.0"
 
-jails-js@^6.3.3:
-  version "6.3.3"
-  resolved "https://registry.yarnpkg.com/jails-js/-/jails-js-6.3.3.tgz#3fc1986d6cbc139d709d3f32f2dc2caf25259639"
-  integrity sha512-vrAsdriM7YCTkcQ7mc9H9WjZP8JZCDtJ/lhA/YCtsRWWGSyFmQH3n6Mp5NsHxWN0p0ZWnhIiPeXXlv6OOvTlKQ==
+jails-js@^6.4.1:
+  version "6.4.1"
+  resolved "https://registry.yarnpkg.com/jails-js/-/jails-js-6.4.1.tgz#7aff56dec9481cfed22a2700306a53b6b2363d78"
+  integrity sha512-0rX082nFBeiZ01uJ6mRdatchrgdsS7lywP7C/NI/0fKzolwNz15VN8s0SM7SH8ovheW6FCTW/63d1jALQF9nnw==
   dependencies:
     idiomorph "^0.7.2"
 
