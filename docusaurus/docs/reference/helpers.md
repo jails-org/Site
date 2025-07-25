@@ -107,6 +107,86 @@ export default function myComponent({ main, dataset }){
 ---
 
 
+## `dependencies`
+
+Dependencies is a helper used to dynamically (at runtime) retrieve shared dependencies between components within your application. It provides an alternative to using import, which can be challenging, particularly when sharing components across different applications in a more generic and flexible manner.
+
+A great example is the `form-validation` component. Each country has its own specific requirements for user data validation. Instead of incorporating all possible rules and unnecessarily increasing the size of your library, a better approach is to allow validation rules to be dynamically injected into the component based on the user's specific needs.
+
+**On Registration**
+```ts 
+import { register } from 'jails-js'
+import { validations, masks } from 'utils/form/validations'
+import * as formValidation from 'jails.std/form-validation'
+register('form-validation', formValidation, { validations, masks })
+
+```
+
+**On Component**
+
+```ts 
+export default function formValidation ({ main, dependencies }) {
+
+  const { validations, masks } = dependencies 
+
+  main(() => {
+    ...
+  })
+}
+
+```
+
+You can see it in action here: https://jails-form-validation.stackblitz.io
+
+---
+
+## `innerHTML`
+```ts
+innerHTML( html: string ) | innerHTML( target: HTMLElement, html: string )
+```
+
+This helper updates a `HTMLElement` using an html string using dom diffing.
+
+```ts
+export default function mycomponent ({ main, on, innerHTML }) {
+
+    let count = 1
+
+    main( _ => {
+        on('click', button, updateElement)
+    })
+
+    const updateElement = () => {
+        innerHTML(`
+            <h1>Hello World - Counter ${count++}<h1>
+        `)
+    }
+}
+```
+
+Or, using a specific target:
+
+```ts
+export default function mycomponent ({ main, elm, on, innerHTML }) {
+
+  let count = 1
+  const target = elm.querySelector('div')
+
+  main( _ => {
+    on('click', button, updateElement)
+  })
+
+  const updateElement = () => {
+    innerHTML(target, `
+        <h1>Hello World - Counter ${count++}<h1>
+    `)
+  }
+}
+```
+
+---
+
+
 ## **State Managment**
 **state** is a helper used to manage the local state of a component. Whenever the state changes, the component updates the HTML by leveraging directives and the current state values. You can use the object form when you want to update a specific property or use the function form if you want to get the current state data in order to update the state.
 
@@ -217,86 +297,6 @@ export const model = {
 Use this feature only when you're facing inconcistencies updates on your project. For the most use cases its convenient to have parent props updates in your child components.
 
 :::
-
-
----
-
-## `dependencies`
-
-Dependencies is a helper used to dynamically (at runtime) retrieve shared dependencies between components within your application. It provides an alternative to using import, which can be challenging, particularly when sharing components across different applications in a more generic and flexible manner.
-
-A great example is the `form-validation` component. Each country has its own specific requirements for user data validation. Instead of incorporating all possible rules and unnecessarily increasing the size of your library, a better approach is to allow validation rules to be dynamically injected into the component based on the user's specific needs.
-
-**On Registration**
-```ts 
-import { register } from 'jails-js'
-import { validations, masks } from 'utils/form/validations'
-import * as formValidation from 'jails.std/form-validation'
-register('form-validation', formValidation, { validations, masks })
-
-```
-
-**On Component**
-
-```ts 
-export default function formValidation ({ main, dependencies }) {
-
-  const { validations, masks } = dependencies 
-
-  main(() => {
-    ...
-  })
-}
-
-```
-
-You can see it in action here: https://jails-form-validation.stackblitz.io
-
----
-
-## `innerHTML`
-```ts
-innerHTML( html: string ) | innerHTML( target: HTMLElement, html: string )
-```
-
-This helper updates a `HTMLElement` using an html string using dom diffing.
-
-```ts
-export default function mycomponent ({ main, on, innerHTML }) {
-
-    let count = 1
-
-    main( _ => {
-        on('click', button, updateElement)
-    })
-
-    const updateElement = () => {
-        innerHTML(`
-            <h1>Hello World - Counter ${count++}<h1>
-        `)
-    }
-}
-```
-
-Or, using a specific target:
-
-```ts
-export default function mycomponent ({ main, elm, on, innerHTML }) {
-
-  let count = 1
-  const target = elm.querySelector('div')
-
-  main( _ => {
-    on('click', button, updateElement)
-  })
-
-  const updateElement = () => {
-    innerHTML(target, `
-        <h1>Hello World - Counter ${count++}<h1>
-    `)
-  }
-}
-```
 
 
 ---
