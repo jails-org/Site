@@ -9,8 +9,8 @@
     "astro": "astro"
   },
   "dependencies": {
-    "@astrojs/tailwind": "^5.1.4",
-    "astro": "^5.2.3",
+    "@astrojs/tailwind": "6.0.2",
+    "astro": "5.12.3",
     "jails-js": "^6.4.1",
     "jails.std": "^0.2.5",
     "jsdom": "^25.0.1",
