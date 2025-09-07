@@ -514,6 +514,38 @@ Subscribe returns a `unsubscribe` function. So you can remove the listener just 
 
 ## **lifecycle**
 
+
+## `effect`
+```ts
+effect( callback: Function ) : void
+```
+It register a function that listens to parent updates, receiving its props so you can either override them or compose them with new changes.
+
+It can be `sync` or `async` function.
+
+```ts 
+export default function myComponent ({ main, effect }) {
+
+    main( _ => {
+        
+    })
+
+    effect( async (props) => {
+        console.log('Parent props changed', props)
+        console.log('Parent count prop has a value of:', props.count)
+        await new Promise(resolve => setTimeout(resolve, 1000))
+        props.count += 1
+        console.log('Child count prop will update with a new count prop value:', props.count)
+    })
+}
+
+export const model = {
+  count: 0
+}
+```
+
+
+
 ## `unmount`
 ```ts
 unmount( callback: Function ) : void
