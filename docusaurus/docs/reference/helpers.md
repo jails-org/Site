@@ -517,7 +517,7 @@ Subscribe returns a `unsubscribe` function. So you can remove the listener just 
 
 ## `effect`
 ```ts
-effect( callback: Function ) : void
+effect( callback: Function ) : void | Promise<any>
 ```
 It register a function that listens to parent updates, receiving its props so you can either override them or compose them with new changes.
 
