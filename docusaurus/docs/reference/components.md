@@ -24,7 +24,7 @@ export default function myComponent({ ... }: Component)
 Each controller runs for every instance of the registered `Custom Elements` on the page, providing a variety of built-in helpers. These helpers allow you to capture events, manipulate the DOM, update states, and more, streamlining the development process.
 
 ```ts 
-import type { Component } from 'jails-js/types'
+import type { Component } from 'jails-js'
 
 export default function myComponent ({ main, elm, on, state }: Component) {
 
@@ -42,7 +42,7 @@ export default function myComponent ({ main, elm, on, state }: Component) {
 You can also define it as `async` if you want to use `await` keyword before code execution.
 
 ```ts 
-import type { Component } from 'jails-js/types'
+import type { Component } from 'jails-js'
 
 export default async function myComponent ({ main, elm, on, state }: Component) {
   
@@ -74,7 +74,7 @@ export const model: Model = {}
 The model initializes the component's state while also serving as documentation, allowing other developers to understand which local states the component manages.
 
 ```ts 
-import type { Component, Model } from 'jails-js/types'
+import type { Component, Model } from 'jails-js'
 
 export default function myComponent ({ main, on, state }: Component) {
 
@@ -113,7 +113,7 @@ export const view: View = ( state: any ) => state : any
 Sometimes, we need to enhance the data passed to our view (HTML) by formatting content based on the component's states. Instead of creating additional variables within the component's state, the `View` function allows us to override everything that will be sent as state variables. This approach avoids cluttering the state scope with extra variables that would otherwise persist over time.
 
 ```ts 
-import type { Component, Model, View } from 'jails-js/types'
+import type { Component, Model, View } from 'jails-js'
 
 export default function myComponent ({ main, on, state }: Component) {
 
@@ -171,7 +171,7 @@ Components in Jails are designed to enhance already-rendered HTML, making them p
 The `template` function handles the rendering of the component's HTML in an embedded manner, providing a seamless, out-of-the-box experience.
 
 ```ts
-import type { Component, Model, Template } from 'jails-js/types'
+import type { Component, Model, Template } from 'jails-js'
 import { html, attributes } from 'jails-js/html'
 
 export default function myComponent ({ main, on, state }: Component) {
