@@ -1,0 +1,19 @@
+---
+
+--- 
+
+<script>
+	import { register } from 'shared/main'
+	import * as appPhone from './index'
+	register('app-phone', appPhone)
+</script>
+
+<app-phone class="relative block md:mt-32">
+	<iframe 
+		html-static
+		class="bg-[url(/phone.jpg)] bg-cover bg-no-repeat px-8 pt-16 m-auto" 
+		width="450" 
+		height="750" 
+		data-src="https://mfe-jails.netlify.app/mfe-hello-world/page.html">
+	</iframe>
+</app-phone>

@@ -1,23 +1,26 @@
 ---
 import Container from 'shared/_components/container/index.astro'
 import Header from '../header/index.astro'
-import Svg from 'shared/_components/svg/index.astro'
-
+import Phone from '../phone/index.astro'
 ---
 
-<section class="hero border-slate-600 flex flex-col h-screen relative">
+<section class="hero text-center md:text-left">
 	<Header />
-	<Container class="items-center flex flex-1 w-full">
-		<div class="m-auto text-center">
-			<Svg name="favicon" class="logo block w-32 m-auto mb-8" />
-			<h1 class="font-thin text-8xl mr-auto">Jails</h1>
-			<h1 class="font-thin text-5xl mt-5 mb-2">An Elegant and Minimalistic</h1>
-			<h2 class="font-thin text-3xl text-[#336699]">Web Components Micro-Framework</h2>
-			<blockquote class="py-4">
-				<p class="font-thin text-xl text-neutral-400">“Simplicity is the ultimate sophistication”</p>
-				<cite class="text-gray-500 text-sm" title="Leonardo Da Vinci">— Leonardo Da Vinci</cite>
-			</blockquote>
-			<a href="/about/" target="_blank" class="bg-[#25a] px-5 py-2 rounded-full inline-block my-8 font-light text-white">Getting Started</a>
+	<Container>
+		<div class="md:flex justify-between items-stretch flex-1">
+			<div class="py-28 md:py-60 space-y-7 md:space-y-5">
+				<h1 class="font-thin text-8xl">Jails.js</h1>
+				<h1 class="font-thin text-5xl text-[#336699]">An Elegant and Minimalistic</h1>
+				<h2 class="font-thin text-3xl">Web Components Micro-Framework</h2>
+				<blockquote class="my-5">
+					<p class="font-thin text-xl text-neutral-400">“Simplicity is the ultimate sophistication”</p>
+					<cite class="text-gray-500 text-sm" title="Leonardo Da Vinci">— Leonardo Da Vinci</cite>
+				</blockquote>
+				<a href="/about/" target="_blank" class="bg-[#25a] hover:opacity-80 mt-5 px-5 py-2 rounded-full inline-block font-light text-white">Getting Started</a>
+			</div>
+			<div class="hidden md:block">
+				<Phone />
+			</div>		
 		</div>
 	</Container>
 </section>

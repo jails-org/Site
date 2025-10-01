@@ -18,8 +18,8 @@ import GoogleFonts from 'shared/_components/google-fonts/index.astro'
 			})
 		</script>
 	</head>
-	<body class="md:bg-[url(/bg.png)] bg-[-10%_-7%] bg-[length:50%_auto] bg-no-repeat">
-		<x-application id="site">
+	<body>
+		<x-application id="site" class="min-h-screen flex flex-col justify-between">
             <slot name="content" />
 		</x-application>
 		<slot name="footer" />
