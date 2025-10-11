@@ -11,9 +11,18 @@
 <app-phone class="relative block md:mt-32">
 	<iframe 
 		html-static
-		class="bg-[url(/phone.jpg)] bg-cover bg-no-repeat px-8 pt-16 m-auto" 
-		width="450" 
+		class="bg-[url(/phone.jpg)] bg-cover bg-no-repeat px-8 pt-16 pb-20 m-auto" 
 		height="750" 
 		data-src="https://mfe-jails.netlify.app/mfe-hello-world/page.html">
 	</iframe>
 </app-phone>
+
+<style>
+	iframe {
+		opacity: 0;
+	}
+	iframe.loaded{
+		opacity: 1;
+		transition: opacity 0.5s ease-in-out;
+	}
+</style>
