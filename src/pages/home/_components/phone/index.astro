@@ -8,10 +8,13 @@
 	register('app-phone', appPhone)
 </script>
 
-<app-phone class="relative m-auto block py-12 w-[350px] my-20 md:my-0 bg-[url(/phone.jpg)] bg-contain bg-no-repeat bg-center">
+<app-phone class="m-auto block py-2 w-[340px] my-20 md:my-0 bg-white border-[8px] rounded-3xl border-black shadow-lg">
+	<div class="camera flex justify-center">
+		<span class="camera-lens block p-3 w-20 bg-black rounded-xl"></span>
+	</div>
 	<iframe 
 		html-static
-		class="m-auto w-[319px]"
+		class="m-auto w-[319px] border-0 block"
 		width="100%"
 		height="600" 
 		data-src="https://mfe-jails.netlify.app/mfe-hello-world/page.html">
