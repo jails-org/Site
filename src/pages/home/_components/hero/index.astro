@@ -2,25 +2,36 @@
 import Container from 'shared/_components/container/index.astro'
 import Header from '../header/index.astro'
 import Phone from '../phone/index.astro'
+import Svg from 'shared/_components/svg/index.astro'
 ---
 
-<section class="hero text-center md:text-left">
+<section class="hero relative text-center md:text-left">
 	<Header />
-	<Container>
-		<div class="md:flex justify-between items-stretch flex-1">
-			<div class="py-28 md:py-60 space-y-7 md:space-y-5">
-				<h1 class="font-thin text-8xl">Jails.js</h1>
-				<h1 class="font-thin text-5xl text-[#336699]">An Elegant and Minimalistic</h1>
+	<div class="background md:bg-[url(/bg-6.webp)] bg-no-repeat mt-32">
+		<Container class="md:flex justify-between items-stretch flex-1">
+			<div class="md:mt-28">
+				<Svg name="favicon" class="logo w-44 mb-5 md:hidden block mx-auto" />
+				<h1 class="font-thin text-8xl py-3">Jails.js</h1>
+				<h1 class="font-thin text-4xl py-2 text-[#1f66b6]">An Elegant and Minimalistic</h1>
 				<h2 class="font-thin text-3xl">Web Components Micro-Framework</h2>
-				<blockquote class="my-5">
-					<p class="font-thin text-xl text-neutral-400">“Simplicity is the ultimate sophistication”</p>
-					<cite class="text-gray-500 text-sm" title="Leonardo Da Vinci">— Leonardo Da Vinci</cite>
+				<blockquote class="mt-5">
+					<p class="font-thin text-xl text-slate-400 italic">
+						“Simplicity is the ultimate sophistication”
+					</p> 
+					<cite class="text-gray-900 text-sm" title="Leonardo Da Vinci">— Leonardo Da Vinci</cite>
 				</blockquote>
-				<a href="/about/" target="_blank" class="bg-[#25a] hover:opacity-80 mt-5 px-5 py-2 rounded-full inline-block font-light text-white">Getting Started</a>
+				<a href="/about/" target="_blank" class="bg-[#1f66b6] hover:opacity-80 mt-6 px-5 py-2 rounded-full inline-block font-light text-white">Getting Started</a>
 			</div>
-			<div class="hidden md:block">
+			<div>
 				<Phone />
 			</div>		
-		</div>
-	</Container>
+		</Container>
+	</div>
 </section>
+
+<style>
+	.background {
+		background-position: 0 460px;
+		background-size: 100% 22%
+	}
+</style>

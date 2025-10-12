@@ -2,32 +2,28 @@
 import Container from 'shared/_components/container/index.astro'
 ---
 
-<ul class="md:my-24">
-	<li class="text-center md:text-left">
-		<Container class="md:flex space-y-20 justify-between items-end gap-10">
-			<section>
-				<span class="text-[orange] text-6xl font-thin block">ƛ</span>
-				<h2 class="text-3xl font-regular mt-5">Function Oriented</h2>
-				<p class="font-light text-md text-gray-500 my-5">
-					<strong class="font-bold">Functional, but in the Javascript way.</strong><br />
-					Use the best of the Javascript Functional Features.
-				</p>
-			</section>
-			<section>
-				<span class="text-[orange] text-6xl font-thin block">🏝</span>
-				<h2 class="text-3xl font-regular mt-5">Island Architecture</h2>
-				<p class="font-light text-md text-gray-500 my-5">
-					<strong class="font-bold">Small, focused chunks of interactivity</strong> within static<br /> and server-rendered web pages
-				</p>
-			</section>
-			<section>
-				<img class="w-14 inline-block" src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/6a/JavaScript-logo.png/600px-JavaScript-logo.png" alt="Javascript Logo" />
-				<h2 class="text-3xl font-regular mt-5">Ecossystem Compatible</h2>
-				<p class="font-light text-md text-gray-500 my-5">
-					<strong>Integrate</strong> your Application with <strong class="font-bold">any other <br />
-					Javascript Library easily</strong>.
-				</p>
-			</section>
-		</Container>
-	</li>
-</ul>
+<Container class="md:flex space-y-20 md:space-y-0 justify-between items-center gap-10 md:mb-12 md:mt-10">
+	<section class="shadow-md bg-white px-10 py-4">
+		<span class="text-[orange] text-7xl font-thin block">ƛ</span>
+		<h2 class="text-3xl font-regular mt-5">Function Oriented</h2>
+		<p class="font-light text-md text-gray-500 my-5">
+			<strong class="font-bold">Functional, but in the Javascript way.</strong><br />
+			Use the best of the Javascript Functional Features.
+		</p>
+	</section>
+	<section class="shadow-md bg-white px-10 py-4">
+		<span class="text-[orange] text-7xl font-thin block">🏝</span>
+		<h2 class="text-3xl font-regular mt-5">Island Architecture</h2>
+		<p class="font-light text-md text-gray-500 my-5">
+			<strong class="font-bold">Small, focused chunks of interactivity</strong> within static<br /> and server-rendered web pages
+		</p>
+	</section>
+	<section class="shadow-md bg-white px-10 py-4">
+		<img class="w-16 inline-block" src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/6a/JavaScript-logo.png/600px-JavaScript-logo.png" alt="Javascript Logo" />
+		<h2 class="text-3xl font-regular mt-5">Ecossystem Compatible</h2>
+		<p class="font-light text-md text-gray-500 my-5">
+			<strong>Integrate</strong> your Application with <strong class="font-bold">any other <br />
+			Javascript Library easily</strong>.
+		</p>
+	</section>
+</Container>

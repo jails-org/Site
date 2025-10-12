@@ -1,25 +1,24 @@
 ---
-import Container from 'shared/_components/container/index.astro'
 import Svg from 'shared/_components/svg/index.astro'
 ---
 
-<header class="header absolute w-full border-slate-100 border-b-[1px] p-1">
-	<Container class="flex items-center justify-between">
+<header class="header fixed top-0 left-0 w-full z-10 shadow-md bg-[#1f66b6] bg-no-repeat">
+	<div class="md:flex items-center justify-between mx-auto md:px-5">
 		<h1 class="font-thin text-3xl mr-auto flex items-center">
-			<Svg name="favicon" class="logo w-12 mr-4" />
-			<span class="font-extralight">Jails.js</span>
+			<Svg name="favicon" class="logo w-12 m-2" />
+			<span class="font-thin text-gray-200">Jails.js</span>
 		</h1>
-		<nav class="font-regular ml-auto p-5 z-10 md:text-md text-gray-600 md:space-x-10 space-x-2 flex fixed md:static bottom-0 left-0 w-full md:w-auto bg-white md:bg-transparent items-center justify-between">
-			<a href="/about/" class="border-transparent hover:border-b-[#336699] border-b-2 pb-1 flex"><span class="md:block">Documentation</span></a>
-			<a href="https://stackblitz.com/@Javiani/collections/jails-organization" target="_blank" class="border-transparent hover:border-b-[#336699] md:flex border-b-2 pb-1"><span class=" md:block">Examples</span></a>
-			<a href="https://medium.com/jails-org" target="_blank" class="border-transparent hover:border-b-[#336699] md:flex border-b-2 pb-1"><span class="md:block">Blog</span></a>
-			<a href="https://github.com/jails-org" target="_blank" class="border-transparent hover:border-b-[#336699] border-b-2 pb-1 flex items-center">
+		<nav class="shadow-xs ml-auto px-5 py-3 z-10 md:text-md md:text-gray-200 md:space-x-10 space-x-2 flex md:static bottom-0 left-0 w-full md:w-auto bg-white md:bg-transparent items-center justify-between">
+			<a href="/about/" class="border-transparent hover:border-b-[#fff] border-b-2 pb-1 flex"><span class="md:block">Documentation</span></a>
+			<a href="https://stackblitz.com/@Javiani/collections/jails-organization" target="_blank" class="border-transparent hover:border-b-[#fff] md:flex border-b-2 pb-1"><span class=" md:block">Examples</span></a>
+			<a href="https://medium.com/jails-org" target="_blank" class="border-transparent hover:border-b-[#fff] md:flex border-b-2 pb-1"><span class="md:block">Blog</span></a>
+			<a href="https://github.com/jails-org" target="_blank" class="border-transparent hover:border-b-[#fff] border-b-2 pb-1 flex items-center">
 				<svg class="mr-2" height="25" aria-hidden="true" viewBox="0 0 24 24" version="1.1" width="32" data-view-component="true" class="octicon octicon-mark-github v-align-middle">
 					<path d="M12.5.75C6.146.75 1 5.896 1 12.25c0 5.089 3.292 9.387 7.863 10.91.575.101.79-.244.79-.546 0-.273-.014-1.178-.014-2.142-2.889.532-3.636-.704-3.866-1.35-.13-.331-.69-1.352-1.18-1.625-.402-.216-.977-.748-.014-.762.906-.014 1.553.834 1.769 1.179 1.035 1.74 2.688 1.25 3.349.948.1-.747.402-1.25.733-1.538-2.559-.287-5.232-1.279-5.232-5.678 0-1.25.445-2.285 1.178-3.09-.115-.288-.517-1.467.115-3.048 0 0 .963-.302 3.163 1.179.92-.259 1.897-.388 2.875-.388.977 0 1.955.13 2.875.388 2.2-1.495 3.162-1.179 3.162-1.179.633 1.581.23 2.76.115 3.048.733.805 1.179 1.825 1.179 3.09 0 4.413-2.688 5.39-5.247 5.678.417.36.776 1.05.776 2.128 0 1.538-.014 2.774-.014 3.162 0 .302.216.662.79.547C20.709 21.637 24 17.324 24 12.25 24 5.896 18.854.75 12.5.75Z"></path>
 				</svg>
 			</a>
 		</nav>
-	</Container>
+	</div>
 </header>
 
 <style>
