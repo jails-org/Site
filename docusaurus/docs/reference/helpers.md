@@ -106,6 +106,33 @@ export default function myComponent({ main, dataset }){
 
 ---
 
+## `query`
+
+```ts
+query( cssSelector: string ) : Array<Promise<HTMLElement>>
+```
+
+Use this method when you need to reference an HTML element that is a Jails component but may not be ready at the time you try to access it. The query method ensures that you can access this element with its public methods available through the parent component.
+
+```ts 
+export default function myComponent({ main, query }){
+
+  const formValidation = query('form-validation')
+ 
+  main(() => {
+    listComponents()
+  })
+
+  const listComponents = () => {
+    formValidation.forEach( async component => {
+      const element: HTMLElement = await component
+      console.log( element )
+    })
+  }
+
+}
+```
+
 
 ## `dependencies`
 
