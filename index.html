@@ -1,0 +1,470 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jails.js — Elegant Web Components Micro-Framework</title>
+    <meta name="description" content="An elegant and minimalistic Web Components micro-framework with Island Architecture and functional JavaScript.">
+    <meta name="author" content="Jails.js">
+
+    <meta property="og:title" content="Jails.js — Elegant Web Components Micro-Framework">
+    <meta property="og:description" content="Build interactive web applications with Island Architecture and functional JavaScript.">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="https://lovable.dev/opengraph-image-p98pqg.png">
+
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:site" content="@Lovable">
+    <meta name="twitter:image" content="https://lovable.dev/opengraph-image-p98pqg.png">
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Custom Styles -->
+    <style>
+        :root {
+            --background: 0, 0%, 100%;
+            --foreground: 215, 25%, 15%;
+            --card: 210, 20%, 98%;
+            --card-foreground: 215, 25%, 15%;
+            --primary: 210, 71%, 42%;
+            --primary-foreground: 0, 0%, 100%;
+            --secondary: 210, 20%, 95%;
+            --muted: 210, 15%, 93%;
+            --muted-foreground: 215, 15%, 45%;
+            --border: 210, 15%, 90%;
+        }
+
+        body {
+            font-family: 'Open Sans', system-ui, sans-serif;
+            color: hsl(var(--foreground));
+            background-color: hsl(var(--background));
+        }
+
+        code {
+            font-family: 'JetBrains Mono', monospace;
+        }
+
+        /* Hero glow animation */
+        @keyframes pulse-glow {
+            0%, 100% { opacity: 0.3; }
+            50% { opacity: 0.6; }
+        }
+
+        .animate-pulse-glow {
+            animation: pulse-glow 4s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+        }
+
+        /* Gradient text */
+        .text-gradient {
+            background: linear-gradient(135deg, hsl(210, 71%, 42%), hsl(210, 71%, 52%));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        /* Code window styling */
+        .code-window {
+            border: 1px solid hsl(var(--border));
+            border-radius: 0.75rem;
+            background-color: hsl(var(--card));
+            overflow: hidden;
+        }
+
+        /* Hero glow background */
+        .hero-glow {
+            background: radial-gradient(
+                ellipse at center,
+                hsl(210, 71%, 42%, 0.15) 0%,
+                transparent 70%
+            );
+        }
+
+        /* Fade-in animation */
+        @keyframes fade-in {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .fade-in {
+            animation: fade-in 0.6s ease-out;
+        }
+
+        .fade-in-delay-1 { animation-delay: 0.1s; }
+        .fade-in-delay-2 { animation-delay: 0.2s; }
+        .fade-in-delay-3 { animation-delay: 0.3s; }
+        .fade-in-delay-4 { animation-delay: 0.4s; }
+
+        /* Card hover effect */
+        .feature-card {
+            transition: all 0.3s ease;
+        }
+
+        .feature-card:hover {
+            border-color: hsl(210, 71%, 42%, 0.3);
+            box-shadow: 0 10px 25px rgba(210, 71%, 42%, 0.05);
+        }
+
+        /* Slide in animation for code section */
+        @keyframes slide-in-left {
+            from {
+                opacity: 0;
+                transform: translateX(-30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        @keyframes slide-in-right {
+            from {
+                opacity: 0;
+                transform: translateX(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        .slide-in-left {
+            animation: slide-in-left 0.5s ease-out;
+        }
+
+        .slide-in-right {
+            animation: slide-in-right 0.5s ease-out;
+        }
+
+        /* Intersection Observer animations */
+        .scroll-animate {
+            opacity: 0;
+            transform: translateY(20px);
+        }
+
+        .scroll-animate.in-view {
+            opacity: 1;
+            transform: translateY(0);
+            transition: opacity 0.5s ease-out, transform 0.5s ease-out;
+        }
+
+        /* Navbar fixed positioning */
+        nav {
+            backdrop-filter: blur(12px);
+            background-color: hsla(var(--background), 0.8);
+            border-bottom: 1px solid hsla(var(--border), 0.5);
+        }
+    </style>
+</head>
+<body class="bg-white text-gray-900">
+    <!-- Navigation -->
+    <nav class="fixed top-0 left-0 right-0 z-50 border-b border-gray-200/50 bg-white/80 backdrop-blur-xl">
+        <div class="container mx-auto flex h-16 items-center justify-between px-6">
+            <a href="/" class="flex items-center gap-2">
+                <div class="flex h-8 w-8 items-center justify-center rounded-lg bg-blue-500">
+                    <span class="text-sm font-bold text-white">J</span>
+                </div>
+                <span class="text-lg font-bold text-gray-900">Jails.js</span>
+            </a>
+
+            <div class="hidden items-center gap-8 md:flex">
+                <a href="https://jails-js.org/about/" class="text-sm text-gray-600 transition-colors hover:text-gray-900">
+                    Documentation
+                </a>
+                <a href="https://jails-js.org/examples/" class="text-sm text-gray-600 transition-colors hover:text-gray-900">
+                    Examples
+                </a>
+                <a href="https://jails-js.org/blog/" class="text-sm text-gray-600 transition-colors hover:text-gray-900">
+                    Blog
+                </a>
+            </div>
+
+            <div class="flex items-center gap-4">
+                <a href="https://github.com/nicedoc/jails" target="_blank" rel="noopener noreferrer" 
+                   class="text-gray-600 transition-colors hover:text-gray-900">
+                    <svg class="h-5 w-5" fill="currentColor" viewBox="0 0 24 24">
+                        <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v 3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
+                    </svg>
+                </a>
+                <a href="https://jails-js.org/about/" 
+                   class="hidden rounded-lg bg-blue-500 px-4 py-2 text-sm font-medium text-white transition-opacity hover:opacity-90 sm:inline-flex">
+                    Get Started
+                </a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="relative flex min-h-screen items-center justify-center overflow-hidden pt-16">
+        <div class="hero-glow absolute inset-0"></div>
+        <div class="absolute top-1/4 left-1/2 h-96 w-96 -translate-x-1/2 rounded-full bg-blue-500/5 blur-3xl animate-pulse-glow"></div>
+
+        <div class="container relative z-10 mx-auto px-6 py-24 text-center">
+            <!-- Version badge -->
+            <div class="fade-in mb-8 inline-flex items-center gap-2 rounded-full border border-gray-200 bg-gray-50 px-4 py-1.5 text-sm">
+                <span class="rounded-full bg-blue-100 px-2 py-0.5 text-xs font-medium text-blue-600">
+                    New
+                </span>
+                <span class="text-gray-600">
+                    Jails.js — Web Components Micro-Framework
+                </span>
+                <svg class="h-3.5 w-3.5 text-gray-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+                </svg>
+            </div>
+
+            <!-- Title -->
+            <h1 class="fade-in fade-in-delay-1 mx-auto max-w-4xl text-5xl font-bold leading-tight tracking-tight md:text-7xl">
+                An Elegant and
+                <span class="text-gradient"> Minimalistic</span>
+                <br />
+                Micro-Framework
+            </h1>
+
+            <!-- Subtitle -->
+            <p class="fade-in fade-in-delay-2 mx-auto mt-6 max-w-2xl text-lg text-gray-600 md:text-xl">
+                Build interactive web applications with Web Components, Island Architecture and the power of functional JavaScript. Simple, fast, and lightweight.
+            </p>
+
+            <!-- CTA buttons -->
+            <div class="fade-in fade-in-delay-3 mt-10 flex flex-col items-center gap-4 sm:flex-row sm:justify-center">
+                <a href="https://jails-js.org/about/"
+                   class="inline-flex items-center gap-2 rounded-xl bg-blue-500 px-6 py-3 text-base font-semibold text-white transition-all hover:opacity-90 hover:shadow-lg hover:shadow-blue-500/25">
+                    Get Started
+                    <svg class="h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+                    </svg>
+                </a>
+                <a href="https://github.com/nicedoc/jails" target="_blank" rel="noopener noreferrer"
+                   class="inline-flex items-center gap-2 rounded-xl border border-gray-200 bg-gray-50 px-6 py-3 text-base font-medium text-gray-900 transition-colors hover:bg-gray-100">
+                    View on GitHub
+                </a>
+            </div>
+
+            <!-- Install command -->
+            <div class="fade-in fade-in-delay-4 mx-auto mt-12 max-w-md">
+                <button onclick="copyInstallCommand()" 
+                        class="code-window flex w-full items-center justify-between px-5 py-3.5 font-mono text-sm transition-all hover:border-blue-500/50">
+                    <span>
+                        <span class="text-gray-600">$ </span>
+                        <span class="text-gray-900" id="install-cmd">npm install jails-js</span>
+                    </span>
+                    <svg class="h-5 w-5 text-gray-600" id="copy-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z"></path>
+                    </svg>
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="relative border-t border-gray-200/50 py-24">
+        <div class="container mx-auto px-6">
+            <div class="scroll-animate mb-16 text-center">
+                <p class="mb-3 text-sm font-medium uppercase tracking-widest text-blue-600">
+                    Why Jails.js?
+                </p>
+                <h2 class="text-3xl font-bold md:text-4xl text-gray-900">
+                    Built for the modern web
+                </h2>
+            </div>
+
+            <div class="grid gap-6 md:grid-cols-3">
+                <!-- Feature 1 -->
+                <div class="scroll-animate feature-card group rounded-2xl border border-gray-200/50 bg-gray-50 p-8">
+                    <div class="mb-5 inline-flex h-12 w-12 items-center justify-center rounded-xl bg-blue-100 text-blue-600 transition-colors group-hover:bg-blue-200">
+                        <svg class="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 20l4-16m4 4l4 4m0 0l-4 4m4-4H3"></path>
+                        </svg>
+                    </div>
+                    <h3 class="mb-3 text-xl font-semibold text-gray-900">Function Oriented</h3>
+                    <p class="leading-relaxed text-gray-600">
+                        Functional, but in the Javascript way. Use the best of JavaScript's functional features to build clean, composable components.
+                    </p>
+                </div>
+
+                <!-- Feature 2 -->
+                <div class="scroll-animate feature-card group rounded-2xl border border-gray-200/50 bg-gray-50 p-8" style="animation-delay: 0.15s">
+                    <div class="mb-5 inline-flex h-12 w-12 items-center justify-center rounded-xl bg-blue-100 text-blue-600 transition-colors group-hover:bg-blue-200">
+                        <svg class="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 21a4 4 0 01-4-4V5a2 2 0 012-2h4a6 6 0 016 6v10a2 2 0 01-2 2z"></path>
+                        </svg>
+                    </div>
+                    <h3 class="mb-3 text-xl font-semibold text-gray-900">Island Architecture</h3>
+                    <p class="leading-relaxed text-gray-600">
+                        Small, focused chunks of interactivity within static and server-rendered web pages. Load only what you need.
+                    </p>
+                </div>
+
+                <!-- Feature 3 -->
+                <div class="scroll-animate feature-card group rounded-2xl border border-gray-200/50 bg-gray-50 p-8" style="animation-delay: 0.3s">
+                    <div class="mb-5 inline-flex h-12 w-12 items-center justify-center rounded-xl bg-blue-100 text-blue-600 transition-colors group-hover:bg-blue-200">
+                        <svg class="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path>
+                        </svg>
+                    </div>
+                    <h3 class="mb-3 text-xl font-semibold text-gray-900">Ecosystem Compatible</h3>
+                    <p class="leading-relaxed text-gray-600">
+                        Integrate your application with any other JavaScript library easily. Works seamlessly with your existing stack.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Code Section -->
+    <section class="relative py-24">
+        <div class="container mx-auto px-6">
+            <div class="grid items-center gap-12 lg:grid-cols-2">
+                <!-- Text -->
+                <div class="scroll-animate slide-in-left">
+                    <p class="mb-3 text-sm font-medium uppercase tracking-widest text-blue-600">
+                        Developer Experience
+                    </p>
+                    <h2 class="mb-6 text-3xl font-bold md:text-4xl text-gray-900">
+                        Simple by design
+                    </h2>
+                    <p class="mb-4 text-lg leading-relaxed text-gray-600">
+                        Jails.js keeps things minimal. Register a component, bind events, and you're done. No complex build steps, no virtual DOM overhead.
+                    </p>
+                    <p class="text-lg leading-relaxed text-gray-600">
+                        Write plain JavaScript with a thin layer of structure. Your components stay small, testable, and framework-agnostic.
+                    </p>
+                </div>
+
+                <!-- Code block -->
+                <div class="scroll-animate slide-in-right">
+                    <div class="code-window overflow-hidden">
+                        <div class="flex items-center gap-2 border-b border-gray-200 px-4 py-3">
+                            <div class="h-3 w-3 rounded-full bg-gray-300"></div>
+                            <div class="h-3 w-3 rounded-full bg-gray-300"></div>
+                            <div class="h-3 w-3 rounded-full bg-gray-300"></div>
+                            <span class="ml-2 text-xs text-gray-500">
+                                app.js
+                            </span>
+                        </div>
+                        <pre class="overflow-x-auto p-6"><code class="font-mono text-sm leading-relaxed text-gray-800">import jails from 'jails-js'
+
+jails.register('hello-world', ({ main, elm }) => {
+
+  main(() => {
+    const button = elm.querySelector('button')
+    button.addEventListener('click', sayHello)
+  })
+
+  const sayHello = () => {
+    alert('Hello from Jails.js! 🎉')
+  }
+})
+
+jails.start()</code></pre>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="relative border-t border-gray-200/50 py-24">
+        <div class="hero-glow absolute inset-0 opacity-50"></div>
+        <div class="container relative z-10 mx-auto px-6 text-center">
+            <div class="scroll-animate">
+                <h2 class="text-3xl font-bold md:text-5xl text-gray-900">
+                    Ready to build with
+                    <span class="text-gradient"> Jails.js</span>?
+                </h2>
+                <p class="mx-auto mt-4 max-w-lg text-lg text-gray-600">
+                    Start building elegant web applications with the simplicity of functional JavaScript and Web Components.
+                </p>
+                <div class="mt-10 flex flex-col items-center gap-4 sm:flex-row sm:justify-center">
+                    <a href="https://jails-js.org/about/"
+                       class="inline-flex items-center gap-2 rounded-xl bg-blue-500 px-6 py-3 text-base font-semibold text-white transition-all hover:opacity-90 hover:shadow-lg hover:shadow-blue-500/25">
+                        Get Started
+                        <svg class="h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+                        </svg>
+                    </a>
+                    <a href="https://jails-js.org/about/"
+                       class="inline-flex items-center gap-2 rounded-xl border border-gray-200 bg-gray-50 px-6 py-3 text-base font-medium text-gray-900 transition-colors hover:bg-gray-100">
+                        Read the Docs
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="border-t border-gray-200/50 py-12">
+        <div class="container mx-auto flex flex-col items-center justify-between gap-6 px-6 md:flex-row">
+            <div class="flex items-center gap-2">
+                <div class="flex h-7 w-7 items-center justify-center rounded-lg bg-blue-500">
+                    <span class="text-xs font-bold text-white">J</span>
+                </div>
+                <span class="text-sm font-medium text-gray-600">
+                    Jails.js — Open Source Micro-Framework
+                </span>
+            </div>
+
+            <div class="flex items-center gap-6">
+                <a href="https://jails-js.org/about/"
+                   class="text-sm text-gray-600 transition-colors hover:text-gray-900">
+                    Docs
+                </a>
+                <a href="https://jails-js.org/examples/"
+                   class="text-sm text-gray-600 transition-colors hover:text-gray-900">
+                    Examples
+                </a>
+                <a href="https://github.com/nicedoc/jails" target="_blank" rel="noopener noreferrer"
+                   class="text-gray-600 transition-colors hover:text-gray-900">
+                    <svg class="h-4 w-4" fill="currentColor" viewBox="0 0 24 24">
+                        <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v 3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
+                    </svg>
+                </a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script>
+        // Copy install command
+        function copyInstallCommand() {
+            const cmd = 'npm install jails-js';
+            const icon = document.getElementById('copy-icon');
+            
+            navigator.clipboard.writeText(cmd).then(() => {
+                icon.innerHTML = '<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>';
+                setTimeout(() => {
+                    icon.innerHTML = '<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z"/>';
+                }, 2000);
+            });
+        }
+
+        // Intersection Observer for scroll animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('in-view');
+                }
+            });
+        }, observerOptions);
+
+        // Observe all elements with scroll-animate class
+        document.querySelectorAll('.scroll-animate').forEach(el => {
+            observer.observe(el);
+        });
+    </script>
+</body>
+</html>
