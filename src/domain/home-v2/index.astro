@@ -62,39 +62,21 @@ import Layout from 'layouts/default.astro'
 				</div>
 
 				<div class="flex items-center gap-4">
-					<a href="https://github.com/nicedoc/jails" target="_blank" rel="noopener noreferrer" 
-						class="text-gray-600 transition-colors hover:text-gray-900">
+					<a href="https://github.com/nicedoc/jails" target="_blank" rel="noopener noreferrer" class="text-gray-600 transition-colors hover:text-gray-900">
 						<svg class="h-5 w-5" fill="currentColor" viewBox="0 0 24 24">
 							<path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v 3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
 						</svg>
-					</a>
-					<a href="https://jails-js.org/about/" 
-						class="hidden rounded-lg bg-blue-500 px-4 py-2 text-sm font-medium text-white transition-opacity hover:opacity-90 sm:inline-flex">
-						Get Started
 					</a>
 				</div>
 			</div>
 		</nav>
 
 		<!-- Hero Section -->
-		<section class="relative flex min-h-screen items-center justify-center overflow-hidden pt-16">
+		<section class="relative flex min-h-screen items-center justify-center overflow-hidden">
 			<div class="hero-glow absolute inset-0"></div>
 			<div class="absolute top-1/4 left-1/2 h-96 w-96 -translate-x-1/2 rounded-full bg-blue-500/5 blur-3xl animate-pulse-glow"></div>
 
 			<div class="container relative z-10 mx-auto px-6 py-24 text-center">
-				<!-- Version badge -->
-				<div class="fade-in mb-8 inline-flex items-center gap-2 rounded-full border border-gray-200 bg-gray-50 px-4 py-1.5 text-sm">
-					<span class="rounded-full bg-blue-100 px-2 py-0.5 text-xs font-medium text-blue-600">
-						New
-					</span>
-					<span class="text-gray-600">
-						Jails.js — Web Components Micro-Framework
-					</span>
-					<svg class="h-3.5 w-3.5 text-gray-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-						<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
-					</svg>
-				</div>
-
 				<!-- Title -->
 				<h1 class="fade-in fade-in-delay-1 mx-auto max-w-4xl text-5xl font-bold leading-tight tracking-tight md:text-7xl">
 					An Elegant and
@@ -154,10 +136,10 @@ import Layout from 'layouts/default.astro'
 				<div class="grid gap-6 md:grid-cols-3">
 					<!-- Feature 1 -->
 					<div class="scroll-animate feature-card group rounded-2xl border border-gray-200/50 bg-gray-50 p-8">
-						<div class="mb-5 inline-flex h-12 w-12 items-center justify-center rounded-xl bg-blue-100 text-blue-600 transition-colors group-hover:bg-blue-200">
-							<svg class="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-								<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 20l4-16m4 4l4 4m0 0l-4 4m4-4H3"></path>
-							</svg>
+						<div class="mb-5 inline-flex h-12 w-12 items-center justify-center text-blue-600">
+							<div class="mb-5 inline-flex h-12 w-12 items-center justify-center text-primary ">
+								<span class="text-6xl">ƛ</span>
+							</div>
 						</div>
 						<h3 class="mb-3 text-xl font-semibold text-gray-900">Function Oriented</h3>
 						<p class="leading-relaxed text-gray-600">
@@ -167,10 +149,8 @@ import Layout from 'layouts/default.astro'
 
 					<!-- Feature 2 -->
 					<div class="scroll-animate feature-card group rounded-2xl border border-gray-200/50 bg-gray-50 p-8" style="animation-delay: 0.15s">
-						<div class="mb-5 inline-flex h-12 w-12 items-center justify-center rounded-xl bg-blue-100 text-blue-600 transition-colors group-hover:bg-blue-200">
-							<svg class="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-								<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 21a4 4 0 01-4-4V5a2 2 0 012-2h4a6 6 0 016 6v10a2 2 0 01-2 2z"></path>
-							</svg>
+						<div class="mb-5 inline-flex h-12 w-12 items-center justify-center text-primary ">
+							<span class="text-6xl">🏝</span>
 						</div>
 						<h3 class="mb-3 text-xl font-semibold text-gray-900">Island Architecture</h3>
 						<p class="leading-relaxed text-gray-600">
@@ -180,10 +160,8 @@ import Layout from 'layouts/default.astro'
 
 					<!-- Feature 3 -->
 					<div class="scroll-animate feature-card group rounded-2xl border border-gray-200/50 bg-gray-50 p-8" style="animation-delay: 0.3s">
-						<div class="mb-5 inline-flex h-12 w-12 items-center justify-center rounded-xl bg-blue-100 text-blue-600 transition-colors group-hover:bg-blue-200">
-							<svg class="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-								<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path>
-							</svg>
+						<div class="mb-5 inline-flex h-12 w-12 items-center justify-center text-primary ">
+							<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/6a/JavaScript-logo.png/600px-JavaScript-logo.png" alt="JS Logo" class="w-12">
 						</div>
 						<h3 class="mb-3 text-xl font-semibold text-gray-900">Ecosystem Compatible</h3>
 						<p class="leading-relaxed text-gray-600">
@@ -225,7 +203,7 @@ import Layout from 'layouts/default.astro'
 									app.js
 								</span>
 							</div>
-							<img src="/carbon.png" alt="Code snippet" />
+							<img src="/carbon.png" alt="Code snippet" class="w-full" />
 						</div>
 					</div>
 				</div>
@@ -252,50 +230,19 @@ import Layout from 'layouts/default.astro'
 								<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
 							</svg>
 						</a>
-						<a href="https://jails-js.org/about/"
-							class="inline-flex items-center gap-2 rounded-xl border border-gray-200 bg-gray-50 px-6 py-3 text-base font-medium text-gray-900 transition-colors hover:bg-gray-100">
-							Read the Docs
-						</a>
 					</div>
 				</div>
 			</div>
 		</section>
 
 		<!-- Footer -->
-		<footer class="border-t border-gray-200/50 py-12">
-			<div class="container mx-auto flex flex-col items-center justify-between gap-6 px-6 md:flex-row">
-				<div class="flex items-center gap-2">
-					<div class="flex h-7 w-7 items-center justify-center rounded-lg bg-blue-500">
-						<span class="text-xs font-bold text-white">J</span>
-					</div>
-					<span class="text-sm font-medium text-gray-600">
-						Jails.js — Open Source Micro-Framework
-					</span>
-				</div>
-
-				<div class="flex items-center gap-6">
-					<a href="https://jails-js.org/about/"
-						class="text-sm text-gray-600 transition-colors hover:text-gray-900">
-						Docs
-					</a>
-					<a href="https://jails-js.org/examples/"
-						class="text-sm text-gray-600 transition-colors hover:text-gray-900">
-						Examples
-					</a>
-					<a href="https://github.com/nicedoc/jails" target="_blank" rel="noopener noreferrer"
-						class="text-gray-600 transition-colors hover:text-gray-900">
-						<svg class="h-4 w-4" fill="currentColor" viewBox="0 0 24 24">
-							<path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v 3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
-						</svg>
-					</a>
-				</div>
-			</div>
+		<footer class="border-t border-gray-200/50 py-5 text-center">
+			<p class="text-xs text-gray-400">
+				Copyright© 2013-2026 <br />Eduardo Ottaviani
+			</p>
 		</footer>
 	</Fragment>
 </Layout>
-
-
-
 
 <!-- Custom Styles -->
 <style>
