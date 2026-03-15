@@ -1,14 +1,16 @@
 import { type Component } from 'jails-js'
-import { importJs } from 'jails.stdlib/import-js'
-import { importCss } from 'jails.stdlib/import-css'
 
-export default async function appCode ({ main }: Component ) {
+import hljs  from 'highlight.js/lib/core'
+import ts 	 from 'highlight.js/lib/languages/typescript'
+import 'highlight.js/styles/atom-one-light.min.css'
+
+hljs.registerLanguage('typescript', ts)
+
+export default async function appCode ({ main, elm }: Component ) {
 	
-	importCss('https://cdn.jsdelivr.net/npm/prismjs@1.30.0/themes/prism-tomorrow.min.css')
-	await importJs('https://cdn.jsdelivr.net/npm/prismjs/prism.min.js?v=' + Math.random())
-	importJs('https://cdn.jsdelivr.net/npm/prismjs/components/prism-javascript.min.js?v=' + Math.random() )
+	const code = elm.querySelector('code')
 
 	main(() => {
-		window.Prism.highlightAll()
+		hljs.highlightElement(code)
 	})
 }
