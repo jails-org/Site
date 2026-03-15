@@ -43,8 +43,8 @@ import ScrollAnimate from '../scroll-animate/index.astro'
 
 			<!-- Feature 3 -->
 			<ScrollAnimate class="feature-card group rounded-2xl border border-gray-200/50 bg-gray-50 p-8" style="animation-delay: 0.3s">
-				<div class="mb-5 inline-flex h-12 w-12 items-center justify-center text-primary ">
-					<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/6a/JavaScript-logo.png/600px-JavaScript-logo.png" alt="JS Logo" class="w-12">
+				<div html-static class="mb-5 inline-flex h-12 w-12 items-center justify-center text-primary ">
+					<img data-src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/6a/JavaScript-logo.png/600px-JavaScript-logo.png" alt="JS Logo" class="w-12">
 				</div>
 				<h3 class="mb-3 text-xl font-semibold text-gray-900">Ecosystem Compatible</h3>
 				<p class="leading-relaxed text-gray-600">
@@ -57,44 +57,44 @@ import ScrollAnimate from '../scroll-animate/index.astro'
 				<div class="mb-5 inline-flex h-12 w-12 items-center justify-center text-primary ">
 										
 					<div class="wrapper absolute">
-					<div class="chart scale-[.5]">
+						<div class="chart scale-[.5]">
 
-						<svg width="150" height="150" viewBox="0 0 150 150">
+							<svg width="150" height="150" viewBox="0 0 150 150">
 
-						<!-- circumference ≈ 377 -->
+							<!-- circumference ≈ 377 -->
 
-						<circle class="segment"
-							cx="75" cy="75" r="50"
-							stroke-dasharray="60 20"
-							stroke-dashoffset="0"/>
+							<circle class="segment"
+								cx="75" cy="75" r="50"
+								stroke-dasharray="60 20"
+								stroke-dashoffset="0"/>
 
-						<circle class="segment"
-							cx="75" cy="75" r="50"
-							stroke-dasharray="60 20"
-							stroke-dashoffset="80"/>
+							<circle class="segment"
+								cx="75" cy="75" r="50"
+								stroke-dasharray="60 20"
+								stroke-dashoffset="80"/>
 
-						<circle class="segment"
-							cx="75" cy="75" r="50"
-							stroke-dasharray="60 20"
-							stroke-dashoffset="160"/>
+							<circle class="segment"
+								cx="75" cy="75" r="50"
+								stroke-dasharray="60 20"
+								stroke-dashoffset="160"/>
 
-						<circle class="segment"
-							cx="75" cy="75" r="50"
-							stroke-dasharray="60 20"
-							stroke-dashoffset="240"/>
+							<circle class="segment"
+								cx="75" cy="75" r="50"
+								stroke-dasharray="60 20"
+								stroke-dashoffset="240"/>
 
-						<circle class="segment"
-							cx="75" cy="75" r="50"
-							stroke-dasharray="60 20"
-							stroke-dashoffset="320"/>
+							<circle class="segment"
+								cx="75" cy="75" r="50"
+								stroke-dasharray="60 20"
+								stroke-dashoffset="320"/>
 
-						</svg>
+							</svg>
 
-						<div class="inner">100</div>
-						<div class="label fcp">FCP</div>
-						<div class="label lcp">LCP</div>
+							<div class="inner">100</div>
+							<div class="label fcp">FCP</div>
+							<div class="label lcp">LCP</div>
 
-					</div>
+						</div>
 					</div>
 				</div>
 				<h3 class="mb-3 text-xl font-semibold text-gray-900">Performance</h3>
