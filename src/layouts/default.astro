@@ -5,17 +5,27 @@ import GoogleFonts from 'shared/_components/google-fonts/index.astro'
 <!doctype html>
 <html lang="en">
 	<head>
-		<title>Jails | An Elegant and Minimalistic Javascript Application Library</title>
 		<meta charset="utf-8" />
-		<meta name="viewport" content="width=device-width" />
+		<title>Jails | An Elegant and Minimalistic Javascript Application Library</title>
+		
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		
 		<meta property="og:title" content="Jails.js — Elegant Web Components Micro-Framework">
 		<meta property="og:description" content="Build interactive web applications with Island Architecture and functional JavaScript.">
 		<meta property="og:type" content="website">
 		<meta property="og:image" content="">
+		
 		<link rel="icon" type="image/png" href="/favicon.svg" />
-		<GoogleFonts family={['Open+Sans:wght@300;400;500;600;700', 'JetBrains+Mono:wght@400;500;600']} />
-		<style>
+		
+		<GoogleFonts family={['Open+Sans:wght@300;400;500;600;700']} />
+		<style is:global>
 			@import "tailwindcss";
+			a {
+				text-decoration: none;
+			}
+			body {
+				font-family: 'Open Sans', system-ui, sans-serif;
+			}
 		</style>
 		<slot name="head" />
 		<script>
@@ -25,11 +35,15 @@ import GoogleFonts from 'shared/_components/google-fonts/index.astro'
 			})
 		</script>
 	</head>
+
 	<body>
-		<x-application class="bg-white text-gray-900">
+		
+		<x-application class="bg-white text-gray-900 text-de">
             <slot name="content" />
 		</x-application>
+
 		<slot name="footer" />
+		
 		<!-- Google tag (gtag.js) -->
 		<script is:inline data-name="analytics" type="text/third-party" src="https://www.googletagmanager.com/gtag/js?id=G-621623ZSE9">
 			window.dataLayer = window.dataLayer || [];
@@ -37,6 +51,7 @@ import GoogleFonts from 'shared/_components/google-fonts/index.astro'
 			gtag('js', new Date());
 			gtag('config', 'G-621623ZSE9');
 		</script>
+
 	</body>
 </html>
 

@@ -1,0 +1,74 @@
+---
+import ScrollAnimate from '../scroll-animate/index.astro'
+---
+
+<script>
+	import { register } from 'shared/main'
+	import * as appCode from './index'
+	register('app-code', appCode)
+</script>
+
+<!-- Code Section -->
+<section class="relative py-24">
+	
+	<div class="container mx-auto px-6">
+		
+		<div class="grid items-center gap-12 lg:grid-cols-2">
+			
+			<ScrollAnimate class="slide-in-left">
+				<p class="mb-3 text-xl font-medium uppercase tracking-widest text-blue-600">
+					Developer Experience
+				</p>
+				<h2 class="mb-6 text-3xl font-bold md:text-4xl text-gray-900">
+					Simple by design
+				</h2>
+				<p class="mb-4 text-lg leading-relaxed text-gray-600">
+					Jails.js keeps things minimal. Register a component, bind events, and you're done. No complex build steps, no virtual DOM overhead.
+				</p>
+				<p class="text-lg leading-relaxed text-gray-600">
+					Write plain JavaScript with a thin layer of structure. Your components stay small, testable, and framework-agnostic.
+				</p>
+			</ScrollAnimate>
+
+			<!-- Code block -->
+			<ScrollAnimate class="slide-in-right overflow-x-auto">
+				<div class="code-window bg-[#fafafa]">
+					<div class="flex items-center gap-2 border-b border-gray-200 px-4 py-3">
+						<div class="h-3 w-3 rounded-full bg-gray-300"></div>
+						<div class="h-3 w-3 rounded-full bg-gray-300"></div>
+						<div class="h-3 w-3 rounded-full bg-gray-300"></div>
+						<span class="ml-2 text-xs text-gray-500">
+							app.js
+						</span>
+					</div>
+					<app-code>
+						<pre class="px-5 pb-5 my-0!"><code class="language-js" is:raw>
+import { type Component } from 'jails-js'		
+
+export default function appCounter({ main, on, state }: Component) {
+
+  main( _ => {
+    on('click', '[data-add]', add)
+    on('click', '[data-subtract]', subtract)
+  })
+
+  const add = () => {
+    state.set( s => s.count += 1 )
+  }
+
+  const subtract = () => {
+    state.set( s => s.count -= 1 )
+  }
+}
+
+export const model = {
+  count: 0
+}
+</code></pre>
+					</app-code>
+					
+				</div>
+			</ScrollAnimate>
+		</div>
+	</div>
+</section>

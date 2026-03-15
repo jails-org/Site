@@ -1,0 +1,13 @@
+---
+const { class: css = '' } = Astro.props
+---
+
+<script>
+	import { register } from 'jails-js'
+	import * as scrollAnimate from './index'
+	register('scroll-animate', scrollAnimate)
+</script>
+
+<scroll-animate class={`block ${css}`}>
+	<slot />
+</scroll-animate>

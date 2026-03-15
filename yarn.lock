@@ -560,10 +560,10 @@
   dependencies:
     minipass "^7.0.4"
 
-"@javiani/onijs@^1.0.7":
-  version "1.0.7"
-  resolved "https://registry.yarnpkg.com/@javiani/onijs/-/onijs-1.0.7.tgz#b58fecfa47059fa0ae751c8f965557760508d432"
-  integrity sha512-jvWY8hS1aExRw1VlubFCRReIJqXkQm+JKKjeK4fUuB1OrNaGtrScvsiAS14sLHZ+Qbo6Fx5jLzNqTXigPLaZaQ==
+"@javiani/onijs@^1.0.9":
+  version "1.0.9"
+  resolved "https://registry.yarnpkg.com/@javiani/onijs/-/onijs-1.0.9.tgz#65ea08b354e2ad39776170ffb36fea7a5d44f707"
+  integrity sha512-8754GY6L1w7B43Spnn03i9O3W5ZWMveI/AF81wVsc0QxdOUS3aqv4RqAQjBPO54d9edf0l4M+J3uZiTmsZlbeg==
   dependencies:
     react "^18.0.0"
     react-dom "^18.0.0"
@@ -2049,7 +2049,7 @@ iconv-lite@0.6.3:
   dependencies:
     safer-buffer ">= 2.1.2 < 3.0.0"
 
-idiomorph@^0.7.2:
+idiomorph@^0.7.2, idiomorph@^0.7.4:
   version "0.7.4"
   resolved "https://registry.yarnpkg.com/idiomorph/-/idiomorph-0.7.4.tgz#5e6ed61ca41114c90e69c5c633c343fdffb79383"
   integrity sha512-uCdSpLo3uMfqOmrwXTpR1k/sq4sSmKC7l4o/LdJOEU+MMMq+wkevRqOQYn3lP7vfz9Mv+USBEqPvi0XhdL9ENw==
@@ -2112,19 +2112,19 @@ jackspeak@^3.1.2:
   optionalDependencies:
     "@pkgjs/parseargs" "^0.11.0"
 
-jails-js@^6.8.0:
-  version "6.8.0"
-  resolved "https://registry.yarnpkg.com/jails-js/-/jails-js-6.8.0.tgz#255091f50a7c90f4d917e33770b8c24c486eefdc"
-  integrity sha512-QkqrKagJmIdzdEcuRaUha4/8kLHZ72wOThPUTX0SXN+IpGY6R3sQljbsXCzzbwJxWOznVXRat2Ses5vTs7P2tA==
+jails-js@^6.9.7:
+  version "6.9.7"
+  resolved "https://registry.yarnpkg.com/jails-js/-/jails-js-6.9.7.tgz#6ca814fbe93dfb5c62a5237fb3e21a0920e5801a"
+  integrity sha512-FZn1+76SlHO2eT2KtcNIPSfMe3wfTYf4f5c5Pe3v/plWej+G7tJnFPC3CV8lT6FClGuqOjnMTYZbPl+jP39XVQ==
   dependencies:
-    morphdom "^2.7.7"
+    idiomorph "^0.7.4"
 
-jails.stdlib@^1.0.0:
-  version "1.0.0"
-  resolved "https://registry.yarnpkg.com/jails.stdlib/-/jails.stdlib-1.0.0.tgz#dda764f4ed696d603156086b24fa38a50a2005dd"
-  integrity sha512-FFqbYq6hxxKYtNY1A0xAUoHzWB0H/mecFkAa5URw6LhkHt5uGNwM7AARJKcHqyivBRAlDYdT+A8D1SMsjWp0yw==
+jails.stdlib@^2.0.6:
+  version "2.0.6"
+  resolved "https://registry.yarnpkg.com/jails.stdlib/-/jails.stdlib-2.0.6.tgz#da8b0af4a30d8d962671c9c358314970465db30d"
+  integrity sha512-PusM+WZhr1etPfCqQlpHF//LLGyV20mDvJ1wUsDU+vPm+bbJO7rG6HtZhfizO3VfyGLvGgVoAfR1LSlYhKhY2Q==
   dependencies:
-    "@javiani/onijs" "^1.0.7"
+    "@javiani/onijs" "^1.0.9"
     "@types/node" "^20.10.7"
     glob "^10.3.10"
     grapnel "0.6.4"
@@ -2763,11 +2763,6 @@ minizlib@^3.1.0:
   integrity sha512-KZxYo1BUkWD2TVFLr0MQoM8vUUigWD3LlD83a/75BqC+4qE0Hb1Vo5v1FgcfaNXvfXzr+5EhQ6ing/CaBijTlw==
   dependencies:
     minipass "^7.1.2"
-
-morphdom@^2.7.7:
-  version "2.7.7"
-  resolved "https://registry.yarnpkg.com/morphdom/-/morphdom-2.7.7.tgz#72559af781357a4eb2169a0a578acb76ff7e8abf"
-  integrity sha512-04GmsiBcalrSCNmzfo+UjU8tt3PhZJKzcOy+r1FlGA7/zri8wre3I1WkYN9PT3sIeIKfW9bpyElA+VzOg2E24g==
 
 mrmime@^2.0.1:
   version "2.0.1"

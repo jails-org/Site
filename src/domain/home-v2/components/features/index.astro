@@ -1,0 +1,70 @@
+---
+import ScrollAnimate from '../scroll-animate/index.astro'
+---
+
+<!-- Features Section -->
+<section class="relative border-t border-gray-200/50 py-24">
+	
+	<div class="container mx-auto px-6">
+
+		<div class="block mb-16 text-center">
+			<p class="mb-3 text-xl font-medium uppercase tracking-widest text-blue-600">
+				Why Jails.js?
+			</p>
+			<h2 class="text-3xl font-bold md:text-4xl text-gray-900">
+				Built for the modern web
+			</h2>
+		</div>
+
+		<div class="grid gap-6 md:grid-cols-3">
+			<!-- Feature 1 -->
+			<ScrollAnimate class="feature-card group rounded-2xl border border-gray-200/50 bg-gray-50 p-8">
+				<div class="mb-5 inline-flex h-12 w-12 items-center justify-center text-blue-600">
+					<div class="mb-5 inline-flex h-12 w-12 items-center justify-center text-primary ">
+						<span class="text-6xl">ƛ</span>
+					</div>
+				</div>
+				<h3 class="mb-3 text-xl font-semibold text-gray-900">Function Oriented</h3>
+				<p class="leading-relaxed text-gray-600">
+					Functional, but in the Javascript way. Use the best of JavaScript's functional features to build clean, composable components.
+				</p>
+			</ScrollAnimate>
+
+			<!-- Feature 2 -->
+			<ScrollAnimate class="feature-card group rounded-2xl border border-gray-200/50 bg-gray-50 p-8" style="animation-delay: 0.15s">
+				<div class="mb-5 inline-flex h-12 w-12 items-center justify-center text-primary ">
+					<span class="text-6xl">🏝</span>
+				</div>
+				<h3 class="mb-3 text-xl font-semibold text-gray-900">Island Architecture</h3>
+				<p class="leading-relaxed text-gray-600">
+					Small, focused chunks of interactivity within static and server-rendered web pages. Load only what you need.
+				</p>
+			</ScrollAnimate>
+
+			<!-- Feature 3 -->
+			<ScrollAnimate class="feature-card group rounded-2xl border border-gray-200/50 bg-gray-50 p-8" style="animation-delay: 0.3s">
+				<div class="mb-5 inline-flex h-12 w-12 items-center justify-center text-primary ">
+					<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/6a/JavaScript-logo.png/600px-JavaScript-logo.png" alt="JS Logo" class="w-12">
+				</div>
+				<h3 class="mb-3 text-xl font-semibold text-gray-900">Ecosystem Compatible</h3>
+				<p class="leading-relaxed text-gray-600">
+					Integrate your application with any other JavaScript library easily. Works seamlessly with your existing stack.
+				</p>
+			</ScrollAnimate>
+		
+		</div>
+	</div>
+
+</section>
+
+<style>
+	/* Card hover effect */
+	.feature-card {
+		transition: all 0.3s ease;
+	}
+
+	.feature-card:hover {
+		border-color: hsl(210, 71%, 42%, 0.3);
+		box-shadow: 0 10px 25px rgba(210, 71%, 42%, 0.05);
+	}
+</style>

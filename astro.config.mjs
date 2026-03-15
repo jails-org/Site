@@ -8,6 +8,12 @@ export default defineConfig({
     enabled: false
 	},
   vite: {
-    plugins: [tailwindcss()]
+    plugins: [tailwindcss()],
+    resolve: {
+			preserveSymlinks: true,
+		},
+    optimizeDeps: {
+			force: true
+		}
   }
 })
