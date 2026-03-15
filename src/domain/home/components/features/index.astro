@@ -16,7 +16,7 @@ import ScrollAnimate from '../scroll-animate/index.astro'
 			</h2>
 		</div>
 
-		<div class="grid gap-6 md:grid-cols-3">
+		<div class="grid gap-6 md:grid-cols-4">
 			<!-- Feature 1 -->
 			<ScrollAnimate class="feature-card group rounded-2xl border border-gray-200/50 bg-gray-50 p-8">
 				<div class="mb-5 inline-flex h-12 w-12 items-center justify-center text-blue-600">
@@ -51,6 +51,57 @@ import ScrollAnimate from '../scroll-animate/index.astro'
 					Integrate your application with any other JavaScript library easily. Works seamlessly with your existing stack.
 				</p>
 			</ScrollAnimate>
+
+			<!-- Feature 4 -->
+			<ScrollAnimate class="feature-card group rounded-2xl border border-gray-200/50 bg-gray-50 p-8" style="animation-delay: 0.3s">
+				<div class="mb-5 inline-flex h-12 w-12 items-center justify-center text-primary ">
+										
+					<div class="wrapper absolute">
+					<div class="chart scale-[.5]">
+
+						<svg width="150" height="150" viewBox="0 0 150 150">
+
+						<!-- circumference ≈ 377 -->
+
+						<circle class="segment"
+							cx="75" cy="75" r="50"
+							stroke-dasharray="60 20"
+							stroke-dashoffset="0"/>
+
+						<circle class="segment"
+							cx="75" cy="75" r="50"
+							stroke-dasharray="60 20"
+							stroke-dashoffset="80"/>
+
+						<circle class="segment"
+							cx="75" cy="75" r="50"
+							stroke-dasharray="60 20"
+							stroke-dashoffset="160"/>
+
+						<circle class="segment"
+							cx="75" cy="75" r="50"
+							stroke-dasharray="60 20"
+							stroke-dashoffset="240"/>
+
+						<circle class="segment"
+							cx="75" cy="75" r="50"
+							stroke-dasharray="60 20"
+							stroke-dashoffset="320"/>
+
+						</svg>
+
+						<div class="inner">100</div>
+						<div class="label fcp">FCP</div>
+						<div class="label lcp">LCP</div>
+
+					</div>
+					</div>
+				</div>
+				<h3 class="mb-3 text-xl font-semibold text-gray-900">Performance</h3>
+				<p class="leading-relaxed text-gray-600">
+					Jails makes blazing-fast apps effortless—optimize page loads and deliver performance users notice. 🚀
+				</p>
+			</ScrollAnimate>
 		
 		</div>
 	</div>
@@ -67,4 +118,51 @@ import ScrollAnimate from '../scroll-animate/index.astro'
 		border-color: hsl(210, 71%, 42%, 0.3);
 		box-shadow: 0 10px 25px rgba(210, 71%, 42%, 0.05);
 	}
+
+	.wrapper{
+		
+		display:flex;
+		align-items:center;
+		justify-content:center;
+	}
+
+	.chart{
+		position:relative;
+		width:150px;
+		height:150px;
+	}
+
+	.chart svg{
+		transform:rotate(-90deg);
+	}
+
+	.segment{
+		fill:none;
+		stroke:#12b35b;
+		stroke-width:10;
+		stroke-linecap:round;
+	}
+
+	.inner{
+		position:absolute;
+		inset:20px;
+		border-radius:50%;
+		display:flex;
+		align-items:center;
+		justify-content:center;
+		font-size:40px;
+		color:#12b35b;
+	}
+
+	.label{
+		position:absolute;
+		font-size:16px;
+		color:#333;
+	}
+
+	
+	.fcp{ top:-5px; right:15px; }
+	.lcp{ top:75%; right:-10px; transform:translateY(-50%); }
+
+
 </style>
