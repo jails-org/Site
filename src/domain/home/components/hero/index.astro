@@ -2,7 +2,13 @@
 
 ---
 
-<section class="relative flex min-h-screen items-center justify-center overflow-hidden">
+<script>
+	import { register } from 'shared/main'
+	import * as appHero from './index'
+	register('app-hero', appHero)
+</script>
+
+<app-hero class="relative flex min-h-screen items-center justify-center overflow-hidden">
 	
 	<div class="hero-glow absolute inset-0"></div>
 	
@@ -54,7 +60,7 @@
 			</button>
 		</div>
 	</div>
-</section>
+</app-hero>
 
 <style>
 
