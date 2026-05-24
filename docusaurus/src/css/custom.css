@@ -6,7 +6,7 @@
 
 /* You can override the default Infima variables here. */
 :root {
-  --ifm-color-primary: #2255aa;
+  --ifm-color-primary: #0172fe;
   --ifm-color-primary-dark: #1f4d99;
   --ifm-color-primary-darker: #1d4891;
   --ifm-color-primary-darkest: #183c77;
@@ -35,5 +35,6 @@
 }
 
 .navbar__logo{
-  height: 40px;
+  height: 30px;
+  padding: 0
 }

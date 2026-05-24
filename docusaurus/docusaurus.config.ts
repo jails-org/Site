@@ -17,7 +17,7 @@ const config: Config = {
 
   title: 'Jails Documentation',
   tagline: 'A Minimalistic Web Components Library',
-  favicon: 'img/logo.svg',
+  favicon: 'img/favicon.png',
 
   // Set the production url of your site here
   url: 'https://your-docusaurus-site.example.com',
@@ -62,19 +62,16 @@ const config: Config = {
     // Replace with your project's social card
     image: 'img/docusaurus-social-card.jpg',
     navbar: {
-      title: 'Jails 6',
+      title: 'Jails.js',
       logo: {
         alt: 'My Site Logo',
-        src: 'img/logo.svg',
+        src: 'img/jails-logo.png',
+        href: 'https://jails-js.org/',
+        target: '_self'
       },
+      
       items: [
-        {
-          type: 'docSidebar',
-          sidebarId: 'tutorialSidebar',
-          position: 'left',
-          label: 'Go to Site',
-          href: 'http://jails-js.org'
-        },
+        
         {
           href: 'https://github.com/jails-org/jails',
           label: 'GitHub',
