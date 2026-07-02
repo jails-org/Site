@@ -1,0 +1,64 @@
+---
+import ScrollAnimate from '../scroll-animate/index.astro'
+---
+
+<script>
+	import { register } from 'shared/main'
+	import * as appExample from './index'
+	register('app-example', appExample)
+</script>
+
+<!-- Example Section -->
+<app-example class="block relative pt-24">
+	
+	<div class="hero-glow absolute inset-0 opacity-50"></div>
+	
+	<div class="container relative z-10 mx-auto px-6 text-center">
+		
+		<ScrollAnimate>
+		
+			<h2 class="text-3xl font-bold md:text-5xl text-gray-900">
+				A Classic TodoMVC App Example
+			</h2>
+			<p class="mx-auto mt-4 max-w-lg text-lg text-gray-600">
+				A Comparison of the same TodoMVC app built with Jails and Vanilla Javascript. 
+			</p>
+			<table class="mx-auto my-10 table-fixed border-collapse text-md ">
+				<thead>
+					<tr class="text-center">
+						<th class="border-b border-gray-200 p-4 pt-0 pr-8 pb-3 font-medium  dark:border-gray-600 dark:text-gray-200"></th>
+						<th class="border-b border-gray-200 p-4 pt-0 pb-3 pl-8 font-bold  dark:border-gray-600 dark:text-gray-200"><a class="block underline!" href="https://stackblitz.com/edit/jails-todomvc?file=todo-app.ts" target="_blank">Jails Version</a>	</th>
+						<th class="border-b border-gray-200 p-4 pt-0 pb-3 font-bold dark:border-gray-600 dark:text-gray-200"><a class="block underline!" href="https://github.com/tastejs/todomvc/tree/gh-pages/examples/javascript-es6/src" target="_blank">Vanilla JS Version</a></th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td class="border-b border-gray-100 p-4 pl-8 text-gray-500">
+							<strong>Number of Files</strong>
+						</td>
+						<td class="border-b border-gray-100 p-4 text-gray-500 text-green-500">
+							1 Ts File
+						</td>
+						<td class="border-b border-gray-100 p-4 pr-8 text-gray-500 text-red-500">
+							7 Js Files
+						</td>
+					</tr>
+					<tr>
+						<td class=" p-4 pl-8 text-gray-500">
+							<strong>Lines Of Code</strong>
+						</td>
+						<td class=" p-4 text-gray-500 text-green-500">
+							~150 lines
+						</td>
+						<td class=" p-4 pr-8 text-gray-500 text-red-500 ">
+							~840 lines
+						</td>
+					</tr>
+				</tbody>
+			</table>
+			
+		</ScrollAnimate>
+
+		<iframe class="hidden w-full min-h-180"></iframe>
+	</div>
+</app-example>
