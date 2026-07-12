@@ -1,3 +1,26 @@
+# Jails documentation index
+
+This file is the primary text-oriented entry point for LLMs and agents. When content is served from a CDN without folder-structure context, start here and use the canonical paths below.
+
+## Canonical discovery paths
+
+- Overview: /ai/overview.md
+- Concepts: /ai/concepts.md
+- Architecture: /ai/architecture.md
+- API: /ai/api.md
+- Directives: /ai/directives.md
+- Patterns: /ai/patterns.md
+- Recipes: /ai/recipes.md
+- Examples: /ai/examples.md
+- Best practices: /ai/best-practices.md
+- Anti-patterns: /ai/anti-patterns.md
+- FAQ: /ai/faq.md
+- Glossary: /ai/glossary.md
+- Machine-readable manifest: /ai/index.json
+- Human-readable index: /ai/README.md
+
+---
+
 # Jails
 
 ## Philosophy

@@ -1,0 +1,78 @@
+{
+  "site": "jails",
+  "baseUrl": "/ai/",
+  "documents": [
+    {
+      "slug": "overview",
+      "path": "overview.md",
+      "title": "Overview",
+      "summary": "High-level overview of Jails, the rendering model, and the main mental model."
+    },
+    {
+      "slug": "concepts",
+      "path": "concepts.md",
+      "title": "Concepts",
+      "summary": "Foundational concepts such as components, state, directives, and composition."
+    },
+    {
+      "slug": "architecture",
+      "path": "architecture.md",
+      "title": "Architecture",
+      "summary": "Canonical architecture and boundaries between HTML, controllers, and services."
+    },
+    {
+      "slug": "api",
+      "path": "api.md",
+      "title": "API",
+      "summary": "Public API surface for registration, lifecycle, rendering, and state."
+    },
+    {
+      "slug": "directives",
+      "path": "directives.md",
+      "title": "Directives",
+      "summary": "Syntax and behavior for built-in directives and templating features."
+    },
+    {
+      "slug": "patterns",
+      "path": "patterns.md",
+      "title": "Patterns",
+      "summary": "Common implementation patterns and composition strategies."
+    },
+    {
+      "slug": "recipes",
+      "path": "recipes.md",
+      "title": "Recipes",
+      "summary": "Practical recipes and end-to-end examples."
+    },
+    {
+      "slug": "examples",
+      "path": "examples.md",
+      "title": "Examples",
+      "summary": "Standalone examples and code snippets."
+    },
+    {
+      "slug": "best-practices",
+      "path": "best-practices.md",
+      "title": "Best Practices",
+      "summary": "Recommended conventions and implementation guidance."
+    },
+    {
+      "slug": "anti-patterns",
+      "path": "anti-patterns.md",
+      "title": "Anti-patterns",
+      "summary": "Common mistakes and pitfalls to avoid."
+    },
+    {
+      "slug": "faq",
+      "path": "faq.md",
+      "title": "FAQ",
+      "summary": "Frequently asked questions and clarifications."
+    },
+    {
+      "slug": "glossary",
+      "path": "glossary.md",
+      "title": "Glossary",
+      "summary": "Terminology and definitions for the framework."
+    }
+  ]
+}
