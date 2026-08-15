@@ -16,7 +16,7 @@ export default async function appExample ({ main, elm, state } : Component) {
 			return false 
 		}
 		iframe.style.display = 'block'
-		iframe.src = 'https://stackblitz.com/edit/jails-todomvc?embed=1&file=todo-app.ts'
+		iframe.src = 'https://stackblitz.com/edit/jails-todomvc?embed=1&file=todo-app.ts&theme=light'
 	}
 }
 
